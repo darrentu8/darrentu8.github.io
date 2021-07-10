@@ -22,20 +22,24 @@
   
     
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>PRO License | Darren</title>
+<title>Git - 如何操作父repository中的子repository(模塊) submodule 使用教學 - GitHub | Darren</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="PRO License" />
+<meta property="og:title" content="Git - 如何操作父repository中的子repository(模塊) submodule 使用教學 - GitHub" />
 <meta name="author" content="Darren Tu" />
 <meta property="og:locale" content="zh_TW" />
-<meta name="description" content="A blog, portfolio, and resume." />
-<meta property="og:description" content="A blog, portfolio, and resume." />
-<link rel="canonical" href="https://darrentu8.github.io/licenses/PRO/" />
-<meta property="og:url" content="https://darrentu8.github.io/licenses/PRO/" />
+<meta name="description" content="會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！" />
+<meta property="og:description" content="會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！" />
+<link rel="canonical" href="https://darrentu8.github.io/blog/2018-12-19-blog-submodule/" />
+<meta property="og:url" content="https://darrentu8.github.io/blog/2018-12-19-blog-submodule/" />
 <meta property="og:site_name" content="Darren" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PRO License" />
+<meta property="og:image" content="https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-19T00:00:00+08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png" />
+<meta property="twitter:title" content="Git - 如何操作父repository中的子repository(模塊) submodule 使用教學 - GitHub" />
 <script type="application/ld+json">
-{"headline":"PRO License","dateModified":"2021-07-10T13:20:55+08:00","@type":"WebPage","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"description":"A blog, portfolio, and resume.","url":"https://darrentu8.github.io/licenses/PRO/","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
+{"image":"https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png","headline":"Git - 如何操作父repository中的子repository(模塊) submodule 使用教學 - GitHub","dateModified":"2021-07-10T18:29:03+08:00","datePublished":"2018-12-19T00:00:00+08:00","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-12-19-blog-submodule/"},"description":"會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！","url":"https://darrentu8.github.io/blog/2018-12-19-blog-submodule/","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -62,7 +66,7 @@
 <meta name="generator" content="Hydejack v9.1.4" />
 
 
-<link rel="alternate" href="https://darrentu8.github.io/licenses/PRO/" hreflang="zh-tw">
+<link rel="alternate" href="https://darrentu8.github.io/blog/2018-12-19-blog-submodule/" hreflang="zh-tw">
 
 <link type="application/atom+xml" rel="alternate" href="https://darrentu8.github.io/feed.xml" title="Darren" />
 
@@ -123,7 +127,7 @@
 
   <style id="_pageStyle">
 
-html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57)}
+html{--accent-color: #ccc;--accent-color-faded: rgba(204,204,204,0.5);--accent-color-highlight: rgba(204,204,204,0.1);--accent-color-darkened: #b9b9b9;--theme-color: #ccc}
 
 </style>
 
@@ -228,7 +232,7 @@ Left here for reference, feel free to delete.
 
   <main
   id="_main"
-  class="content layout-plain"
+  class="content layout-post"
   role="main"
 >
   <nav id="breadcrumbs" class="screen-only"><ul>
@@ -241,226 +245,326 @@ Left here for reference, feel free to delete.
         <span>/</span>
         
         
-        <a href="/licenses/">licenses</a>
+        <a href="/blog/">blog</a>
       
       </li>
     
       <li>
       
         <span>/</span>
-        <span>PRO</span>
+        <span>2018-12-19-blog-submodule</span>
       
       </li>
     
   
 </ul></nav>
-  <article class="page mb6" role="article">
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-blog-blog-submodule" class="page post mb6" role="article">
   <header>
-    <h1 class="page-title">PRO License</h1>
+    <h1 class="post-title flip-project-title">
+      
+        Git - 如何操作父repository中的子repository(模塊) submodule 使用教學 - GitHub
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time> in <span>Blog</span> 
+      </span>
+      
+        
+          
+          
+          
+            
+            
+            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-10">
+              <span class="sr-only">Last modified at:</span>
+              <span class="icon-history"></span>
+              <time datetime="2021-07-10T18:29:03+08:00">2021-07-10</time>
+            </span>
+          
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png"
+  
+  alt="Git - 如何操作父repository中的子repository(模塊) submodule 使用教學 - GitHub"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
     
 
 
 
-  <div class="hr pb0"></div>
+  
 
 
   </header>
 
-  <ul class="large-only" id="markdown-toc">
-  <li><a href="#license-summary" id="markdown-toc-license-summary">License Summary</a></li>
-  <li><a href="#terms-and-conditions" id="markdown-toc-terms-and-conditions">Terms and Conditions</a>    <ul>
-      <li><a href="#1-preamble" id="markdown-toc-1-preamble">1. Preamble</a></li>
-      <li><a href="#2-license-grant" id="markdown-toc-2-license-grant">2. License Grant</a></li>
-      <li><a href="#3-term--termination" id="markdown-toc-3-term--termination">3. Term &amp; Termination:</a></li>
-      <li><a href="#4-payment" id="markdown-toc-4-payment">4. Payment</a></li>
-      <li><a href="#5-upgrades-updates-and-fixes" id="markdown-toc-5-upgrades-updates-and-fixes">5. Upgrades, Updates and Fixes</a></li>
-      <li><a href="#6-support" id="markdown-toc-6-support">6. Support</a></li>
-      <li><a href="#7-liability" id="markdown-toc-7-liability">7. Liability</a></li>
-      <li><a href="#8-warranty" id="markdown-toc-8-warranty">8. Warranty</a></li>
-      <li><a href="#9-no-refunds" id="markdown-toc-9-no-refunds">9. No Refunds</a></li>
-      <li><a href="#10-indemnification" id="markdown-toc-10-indemnification">10. Indemnification</a></li>
-      <li><a href="#11-governing-law-jurisdiction" id="markdown-toc-11-governing-law-jurisdiction">11. Governing Law, Jurisdiction</a></li>
-    </ul>
-  </li>
-</ul>
+  
+    <blockquote>
+  <p>會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！</p>
+</blockquote>
 
-<h2 id="license-summary">License Summary</h2>
+<h2 id="稍微來介紹一下-jekyll">稍微來介紹一下 Jekyll</h2>
+<p>Jekyll是基於Ruby Gem的解析引擎，能夠將樣板、liquid 語言、markdown轉換為 靜態網頁 的產生器。</p>
+<h3 id="使用的-jekyll-特色呢">使用的 Jekyll 特色呢?</h3>
 <ul>
-  <li>License concerns use of <a href="https://hydejack.com/">Hydejack PRO</a></li>
-  <li>License does not expire</li>
-  <li>Commercial use allowed</li>
-  <li>Can modify source code</li>
-  <li>Parts of software are provided under <a href="/NOTICE/#licenses">separate licenses</a></li>
+  <li>No more databases 不需要資料庫</li>
+  <li>Liquid Template 動態模板</li>
+  <li>Free hosting with GitHub Pages 只要學會git push 就可以丟到github page上</li>
+  <li>Markdown 好編寫</li>
 </ul>
 
-<h2 id="terms-and-conditions">Terms and Conditions</h2>
-<h3 id="1-preamble">1. Preamble</h3>
-<p>This Agreement governs the relationship between you (hereinafter: Licensee) and
-Florian Klampfer qwtel.com (hereinafter: Licensor).
-This Agreement sets the terms, rights, restrictions and obligations on using
-Hydejack PRO (hereinafter: The Software)
-created and owned by Licensor, as detailed herein.</p>
+<h2 id="何謂-git-submodule">何謂 Git Submodule</h2>
+<p>間單的來講，就是主專案中又有一個子專案需要拆開來使用git，另一方面也是一種 Library 套件管理的概念，這時候 Git Submodule 就是一個不錯的解決方案，但首先 Git Submodule 不太好管理就是了~ ~</p>
 
-<h3 id="2-license-grant">2. License Grant</h3>
-<p>Licensor hereby grants Licensee a Personal, Perpetual, Commercial, Royalty free,
-Including the rights to create derivative works, Non-exclusive license, all with accordance with
-the terms set forth and other legal restrictions set forth in 3rd party software used while running Software.</p>
+<p>而 Git Submodule 衍生出巢狀的 Git 結構，意思是你有一個 Repository，裡面還有一個子 Repository。而如果用一般的 Git Push 的話，你會發現子 Repository 的資料並不會同步到 remote repository，因此這邊就要加入 Git Submodule 的指令操作。</p>
 
-<ol>
-  <li>
-    <p><strong>Limited:</strong> Licensee may use Software for the purpose of:</p>
+<h2 id="從子模塊開始">從子模塊開始</h2>
+<p>我們將逐步開發一個簡單的項目，該項目已拆分為一個主項目和幾個子項目。</p>
 
-    <ol>
-      <li>Running Software on Licensee’s Website[s] and Server[s];</li>
-      <li>Allowing 3rd Parties to run Software on Licensee’s Website[s] and Server[s];</li>
-      <li>Publishing Software’s output to Licensee and 3rd Parties;</li>
-      <li>Modify Software to suit Licensee’s needs and specifications.</li>
-    </ol>
-  </li>
-  <li>
-    <p>This license is granted perpetually, as long as you do not materially breach it.</p>
-  </li>
-  <li>
-    <p><strong>Commercial, Royalty Free:</strong> Licensee may use Software for any purpose, including paid-services, without any
-royalties</p>
-  </li>
-  <li>
-    <p><strong>Including the Right to Create Derivative Works:</strong> Licensee may create derivative works based on Software,
-including amending Software’s source code, modifying it, integrating it into a larger work or removing portions of
-Software.</p>
-  </li>
-</ol>
+<p>讓我們首先添加一個現有的 Git 存儲庫作為我們正在處理的存儲庫的子模塊。要添加新的子模塊，請使用 git submodule add帶有要開始跟踪的項目的絕對或相對 URL的命令。在本例中，我們將添加一個名為“subCase”的庫。</p>
 
-<h3 id="3-term--termination">3. Term &amp; Termination:</h3>
-<p>The Term of this license shall be until terminated. Licensor may terminate this Agreement,
-including Licensee’s license in the case where Licensee:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git submodule add https://github.com/test/subCase
+Cloning into 'subCase'...
+remote: Counting objects: 11, done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 11 (delta 0), reused 11 (delta 0)
+Unpacking objects: 100% (11/11), done.
+Checking connectivity... done.
+</code></pre></div></div>
 
-<ol>
-  <li>became insolvent or otherwise entered into any liquidation process; or</li>
-  <li>exported The Software to any jurisdiction where licensor may not enforce his rights under this agreements in; or</li>
-  <li>Licensee was in breach of any of this license’s terms and conditions and such breach was not cured, immediately
-upon notification; or</li>
-  <li>Licensee in breach of any of the terms of clause 2 to this license; or</li>
-  <li>Licensee otherwise entered into any arrangement which caused Licensor to be unable to enforce his rights under
-this License.</li>
-</ol>
+<p>默認情況下，子模塊會將子項目添加到與存儲庫同名的目錄中，在本例中為“subCase”。如果你希望它轉到其他地方，你可以在命令的末尾添加不同的路徑。</p>
 
-<h3 id="4-payment">4. Payment</h3>
-<p>In consideration of the License granted under clause 2, Licensee shall pay Licensor a fee, via
-Credit-Card or any other means which Licensor may deem adequate. Failure to perform payment shall construe as
-material breach of this Agreement.</p>
+<p>如果你此時運行git status，你會注意到一些事情。</p>
 
-<h3 id="5-upgrades-updates-and-fixes">5. Upgrades, Updates and Fixes</h3>
-<p>Licensor may provide Licensee, from time to time, with Upgrades, Updates or Fixes,
-as detailed herein and according to his sole discretion. Licensee hereby warrants to keep The Software up-to-date
-and install all relevant updates and fixes, and may, at his sole discretion, purchase upgrades, according to the
-rates set by Licensor. Licensor shall provide any update or Fix free of charge; however, nothing in this Agreement
-shall require Licensor to provide Updates or Fixes.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
 
-<ol>
-  <li>
-    <p><strong>Upgrades:</strong> for the purpose of this license, an Upgrade shall be a material amendment in The Software, which
-contains new features and or major performance improvements and shall be marked as a new version number. For
-example, should Licensee purchase The Software under version 1.X.X, an upgrade shall commence under number
-2.0.0.</p>
-  </li>
-  <li>
-    <p><strong>Updates:</strong> for the purpose of this license, an update shall be a minor amendment in The Software, which may
-contain new features or minor improvements and shall be marked as a new sub-version number. For example, should
-Licensee purchase The Software under version 1.1.X, an upgrade shall commence under number 1.2.0.</p>
-  </li>
-  <li>
-    <p><strong>Fix:</strong> for the purpose of this license, a fix shall be a minor amendment in The Software, intended to remove
-bugs or alter minor features which impair the The Software’s functionality. A fix shall be marked as a new
-sub-sub-version number. For example, should Licensee purchase Software under version 1.1.1, an upgrade shall
-commence under number 1.1.2.</p>
-  </li>
-</ol>
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-<h3 id="6-support">6. Support</h3>
-<p>Software is provided under an AS-IS basis and without any support, updates or maintenance. Nothing in
-this Agreement shall require Licensor to provide Licensee with support or fixes to any bug, failure,
-mis-performance or other defect in The Software.</p>
+	new file:   .gitmodules
+	new file:   subCase
+</code></pre></div></div>
 
-<ol>
-  <li>
-    <p><strong>Bug Notification:</strong> Licensee may provide Licensor of details regarding any bug, defect or failure in The
-Software promptly and with no delay from such event; Licensee shall comply with Licensor’s request for
-information regarding bugs, defects or failures and furnish him with information, screenshots and try to
-reproduce such bugs, defects or failures.</p>
-  </li>
-  <li>
-    <p><strong>Feature Request:</strong> Licensee may request additional features in Software, provided, however, that:</p>
+<p>首先，你應該注意到新.gitmodules文件。這是一個配置文件，用於存儲項目 URL 和你將其拉入的本地子目錄之間的映射：</p>
 
-    <ol>
-      <li>Licensee shall waive any claim or right in such feature should feature be developed by Licensor;</li>
-      <li>Licensee shall be prohibited from developing the feature, or disclose such feature request, or feature, to
-any 3rd party directly competing with Licensor or any 3rd party which may be, following the development of
-such feature, in direct competition with Licensor;</li>
-      <li>Licensee warrants that feature does not infringe any 3rd party patent, trademark, trade-secret or any other
-intellectual property right; and</li>
-      <li>Licensee developed, envisioned or created the feature solely by himself.</li>
-    </ol>
-  </li>
-</ol>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[submodule "subCase"]
+	path = subCase
+	url = https://github.com/test/subCase
+</code></pre></div></div>
 
-<h3 id="7-liability">7. Liability</h3>
-<p>To the extent permitted under Law, The Software is provided under an AS-IS basis. Licensor shall
-never, and without any limit, be liable for any damage, cost, expense or any other payment incurred by Licensee as
-a result of Software’s actions, failure, bugs and/or any other interaction between The Software and Licensee’s
-end-equipment, computers, other software or any 3rd party, end-equipment, computer or services. Moreover, Licensor
-shall never be liable for any defect in source code written by Licensee when relying on The Software or using The
-Software’s source code.</p>
+<p>如果你有多個子模塊，則此文件中將有多個條目。請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起推動和拉動。這就是其他克隆這個項目的人知道從哪裡獲取子模塊項目的方式。</p>
 
-<h3 id="8-warranty">8. Warranty</h3>
-<ol>
-  <li>
-    <p><strong>No-Warranty:</strong> The Software is provided without any warranty; Licensor hereby disclaims any warranty that The
-Software shall be error free, without defects or code which may cause damage to Licensee’s computers or to
-Licensee, and that Software shall be functional. Licensee shall be solely liable to any damage, defect or loss
-incurred as a result of operating software and undertake the risks contained in running The Software on
-License’s Server[s] and Website[s].</p>
-  </li>
-  <li>
-    <p><strong>Prior Inspection:</strong> Licensee hereby states that he inspected The Software thoroughly and found it
-satisfactory and adequate to his needs, that it does not interfere with his regular operation and that it does
-meet the standards and scope of his computer systems and architecture. Licensee found that The Software
-interacts with his development, website and server environment and that it does not infringe any of End User
-License Agreement of any software Licensee may use in performing his services. Licensee hereby waives any
-claims regarding The Software’s incompatibility, performance, results and features, and warrants that he
-inspected the The Software.</p>
-  </li>
-</ol>
+<h2 id="reference">Reference</h2>
+<p>https://git-scm.com/docs/git-submodule</p>
 
-<h3 id="9-no-refunds">9. No Refunds</h3>
-<p>Licensee warrants that he inspected The Software according to clause 8.2 and that it is adequate to
-his needs. Accordingly, as The Software is intangible goods, Licensee shall not be, ever, entitled to any refund,
-rebate, compensation or restitution for any reason whatsoever, even if The Software contains material flaws.</p>
-
-<h3 id="10-indemnification">10. Indemnification</h3>
-<p>Licensee hereby warrants to hold Licensor harmless and indemnify Licensor for any lawsuit
-brought against it in regards to Licensee’s use of The Software in means that violate, breach or otherwise
-circumvent this license, Licensor’s intellectual property rights or Licensor’s title in The Software. Licensor
-shall promptly notify Licensee in case of such legal action and request Licensee’s consent prior to any settlement
-in relation to such lawsuit or claim.</p>
-
-<h3 id="11-governing-law-jurisdiction">11. Governing Law, Jurisdiction</h3>
-<p>Licensee hereby agrees not to initiate class-action lawsuits against Licensor in
-relation to this license and to compensate Licensor for any legal fees, cost or attorney fees should any claim
-brought by Licensee against Licensor be denied, in part or in full.</p>
-
-
+  
 </article>
+
 
 <!--  -->
 <section id="clapper" class="mb6">
     <applause-button style="margin: 0 auto;width: 120px; height: 120px" color="rgb(17, 128, 127)"></applause-button>
 </section>
-  <hr class="dingbat related mb6" />
   
-    <p class="message centered border-radius" hidden>
+  
+    <p class="message centered border-radius" >
       <span style="display:block;margin-bottom:.5rem;">喜歡就給個鼓勵！ <br> A clap is much appreciated if you enjoyed. No sign up or cost associated :)</span>
     </p>
+  
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="/assets/img/avatar.jpg"
+    srcset="/assets/img/avatar.jpg 1x,/assets/img/avatar.jpg 2x"
+    
+  
+  alt="Darren Tu"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About Author
+  </h2>
+
+  <ol>
+  <li>9年的網站開發經驗，擅長產品開發、UIUX介面。</li>
+  <li>電子商務、媒體健康類網頁APP開發。</li>
+  <li>與產品團隊、設計團隊密切合作良好溝通協調能力。</li>
+  <li>熟練 MVC / MVVM Pattern 前後分離架構。</li>
+  <li>Sass / SCSS 模組化，npm/webpack 等構建工具，Git 協同開發流程。</li>
+  <li>分析客戶數據，市場信息和競爭製定營銷策略。</li>
+</ol>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://gitlab.com/darrentu88" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:darrentu8@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.instagram.com/tu_d/" title="Instagram" class="no-mark-external">
+      <span class="icon-instagram"></span>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2018-11-20-blog-git/" class="flip-title"><span>Git – repository 遠端操作出現 「Please make sure you have the correct access rights...SSH或權限錯誤 - GitHub</span></a>  <time class="faded fine" datetime="2018-11-20T00:00:00+08:00">20 Nov 2018</time></li>                        <li class="h4">  <a href="/blog/2018-10-10-blog-browser/" class="flip-title"><span>web工程師應該要知道瀏覽器架構演變及渲染機制</span></a>  <time class="faded fine" datetime="2018-10-10T00:00:00+08:00">10 Oct 2018</time></li>                        <li class="h4">  <a href="/blog/2018-08-05-blog-google-sheet/" class="flip-title"><span>利用Google Sheet 當你的簡易表單資料庫！</span></a>  <time class="faded fine" datetime="2018-08-05T00:00:00+08:00">05 Aug 2018</time></li>            </ul></aside>
+
+  
+
+  
+  
+
+  
+    
+
   
 
 
@@ -493,7 +597,7 @@ brought by Licensee against Licensor be denied, in part or in full.</p>
 
 
 
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(8,46,57);background-image:url(/assets/img/sidebar-bg.gif)"></div>
+<div class="sidebar-bg " style="background:url('https://www.pbs.org/wgbh/nova/media/images/bfcppfu.width-800.png') center/cover"></div>
 
     <div class="sidebar-sticky">
   <div class="sidebar-about">
