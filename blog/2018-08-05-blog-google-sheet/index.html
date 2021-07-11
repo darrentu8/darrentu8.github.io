@@ -27,8 +27,8 @@
 <meta property="og:title" content="利用Google Sheet 當你的簡易表單資料庫！" />
 <meta name="author" content="Darren Tu" />
 <meta property="og:locale" content="zh_TW" />
-<meta name="description" content="這篇文章想來分享一個自己覺得非常有趣且實用的應用，就是利用 google sheet 來充當表單內容的資料庫，我想許多讀者會猜測這將會是一個麻煩的過程，可能要經過許多繁雜的設置，不過事實是… 其實非常簡單又方便 如果想一探究竟的讀者就繼續往下看吧！ 做什麼 - Simple Demo" />
-<meta property="og:description" content="這篇文章想來分享一個自己覺得非常有趣且實用的應用，就是利用 google sheet 來充當表單內容的資料庫，我想許多讀者會猜測這將會是一個麻煩的過程，可能要經過許多繁雜的設置，不過事實是… 其實非常簡單又方便 如果想一探究竟的讀者就繼續往下看吧！ 做什麼 - Simple Demo" />
+<meta name="description" content="A blog, portfolio, and resume." />
+<meta property="og:description" content="A blog, portfolio, and resume." />
 <link rel="canonical" href="https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/" />
 <meta property="og:url" content="https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/" />
 <meta property="og:site_name" content="Darren" />
@@ -39,7 +39,7 @@
 <meta property="twitter:image" content="https://img.ltn.com.tw/Upload/3c/page/2016/08/03/160803-25553-1.png" />
 <meta property="twitter:title" content="利用Google Sheet 當你的簡易表單資料庫！" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"description":"這篇文章想來分享一個自己覺得非常有趣且實用的應用，就是利用 google sheet 來充當表單內容的資料庫，我想許多讀者會猜測這將會是一個麻煩的過程，可能要經過許多繁雜的設置，不過事實是… 其實非常簡單又方便 如果想一探究竟的讀者就繼續往下看吧！ 做什麼 - Simple Demo","image":"https://img.ltn.com.tw/Upload/3c/page/2016/08/03/160803-25553-1.png","url":"https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/","headline":"利用Google Sheet 當你的簡易表單資料庫！","dateModified":"2021-07-10T13:20:55+08:00","datePublished":"2018-08-05T00:00:00+08:00","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
+{"image":"https://img.ltn.com.tw/Upload/3c/page/2016/08/03/160803-25553-1.png","headline":"利用Google Sheet 當你的簡易表單資料庫！","dateModified":"2021-07-11T15:03:42+08:00","datePublished":"2018-08-05T00:00:00+08:00","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/"},"description":"A blog, portfolio, and resume.","url":"https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -103,7 +103,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-07-11T00:35:07+08:00',
+    INDEX_KEY: 'index--2021-07-11T15:07:07+08:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -289,10 +289,10 @@ Left here for reference, feel free to delete.
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-10">
+            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-11">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2021-07-10T13:20:55+08:00">2021-07-10</time>
+              <time datetime="2021-07-11T15:03:42+08:00">2021-07-11</time>
             </span>
           
         
@@ -333,7 +333,21 @@ Left here for reference, feel free to delete.
   </header>
 
   
-    <p>這篇文章想來分享一個自己覺得非常有趣且實用的應用，就是利用 google sheet 來充當表單內容的資料庫，我想許多讀者會猜測這將會是一個麻煩的過程，可能要經過許多繁雜的設置，不過事實是…
+    <ol id="markdown-toc">
+  <li><a href="#做什麼---simple-demo" id="markdown-toc-做什麼---simple-demo">做什麼 - Simple Demo</a></li>
+  <li><a href="#客製化表單上傳至-google-sheet" id="markdown-toc-客製化表單上傳至-google-sheet">客製化表單上傳至 google sheet</a></li>
+  <li><a href="#luxgen-官網" id="markdown-toc-luxgen-官網">Luxgen 官網</a></li>
+  <li><a href="#setp-1-建立一個-google-表單" id="markdown-toc-setp-1-建立一個-google-表單">SETP 1. 建立一個 Google 表單</a></li>
+  <li><a href="#google-form-連結-google-sheet" id="markdown-toc-google-form-連結-google-sheet">google form 連結 google sheet</a>    <ol>
+      <li><a href="#進入後開啟-browser-的-devtool" id="markdown-toc-進入後開啟-browser-的-devtool">進入後開啟 browser 的 devtool</a></li>
+      <li><a href="#在-form-element-內層可以找到幾個-hidden-的-input" id="markdown-toc-在-form-element-內層可以找到幾個-hidden-的-input">在 form element 內層可以找到幾個 hidden 的 input</a></li>
+    </ol>
+  </li>
+  <li><a href="#post-request" id="markdown-toc-post-request">POST Request</a></li>
+  <li><a href="#小結" id="markdown-toc-小結">小結</a></li>
+</ol>
+
+<p>這篇文章想來分享一個自己覺得非常有趣且實用的應用，就是利用 google sheet 來充當表單內容的資料庫，我想許多讀者會猜測這將會是一個麻煩的過程，可能要經過許多繁雜的設置，不過事實是…
 其實非常簡單又方便
 如果想一探究竟的讀者就繼續往下看吧！</p>
 <h2 id="做什麼---simple-demo">做什麼 - Simple Demo</h2>
@@ -586,7 +600,7 @@ const handleSubmit = values =&gt; {
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>初學者入門學習的演算法 - 合併排序法 Merge Sort</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>初學者入門學習的演算法 - 泡沫排序 Bubble Sort</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-12-19-blog-submodule/" class="flip-title"><span>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub</span></a>  <time class="faded fine" datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-12-19-blog-submodule/" class="flip-title"><span>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub</span></a>  <time class="faded fine" datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time></li>            </ul></aside>
 
   
 

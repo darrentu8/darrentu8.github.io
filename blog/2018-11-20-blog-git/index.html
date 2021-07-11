@@ -27,8 +27,8 @@
 <meta property="og:title" content="Git – repository 遠端操作出現 「Please make sure you have the correct access rights…SSH或權限錯誤 - GitHub" />
 <meta name="author" content="Darren Tu" />
 <meta property="og:locale" content="zh_TW" />
-<meta name="description" content="之前因為自己公司筆電跟自家桌機常常需要切換開發，導致我自己的個人部落格在不同電腦上要進行同步，或是在接手專案要維護的時候，準備要 git pull 卻出現錯誤。去google網路看是不是SSH的問題，但查了又不是此類的問題，如果你也剛好遇到此問題可以來試試以下這段：" />
-<meta property="og:description" content="之前因為自己公司筆電跟自家桌機常常需要切換開發，導致我自己的個人部落格在不同電腦上要進行同步，或是在接手專案要維護的時候，準備要 git pull 卻出現錯誤。去google網路看是不是SSH的問題，但查了又不是此類的問題，如果你也剛好遇到此問題可以來試試以下這段：" />
+<meta name="description" content="A blog, portfolio, and resume." />
+<meta property="og:description" content="A blog, portfolio, and resume." />
 <link rel="canonical" href="https://darrentu8.github.io/blog/2018-11-20-blog-git/" />
 <meta property="og:url" content="https://darrentu8.github.io/blog/2018-11-20-blog-git/" />
 <meta property="og:site_name" content="Darren" />
@@ -39,7 +39,7 @@
 <meta property="twitter:image" content="https://chilli.codes/wp-content/uploads/2020/10/git.jpg" />
 <meta property="twitter:title" content="Git – repository 遠端操作出現 「Please make sure you have the correct access rights…SSH或權限錯誤 - GitHub" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-11-20-blog-git/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"description":"之前因為自己公司筆電跟自家桌機常常需要切換開發，導致我自己的個人部落格在不同電腦上要進行同步，或是在接手專案要維護的時候，準備要 git pull 卻出現錯誤。去google網路看是不是SSH的問題，但查了又不是此類的問題，如果你也剛好遇到此問題可以來試試以下這段：","image":"https://chilli.codes/wp-content/uploads/2020/10/git.jpg","url":"https://darrentu8.github.io/blog/2018-11-20-blog-git/","headline":"Git – repository 遠端操作出現 「Please make sure you have the correct access rights…SSH或權限錯誤 - GitHub","dateModified":"2021-07-10T17:21:40+08:00","datePublished":"2018-11-20T00:00:00+08:00","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
+{"image":"https://chilli.codes/wp-content/uploads/2020/10/git.jpg","headline":"Git – repository 遠端操作出現 「Please make sure you have the correct access rights…SSH或權限錯誤 - GitHub","dateModified":"2021-07-11T15:03:35+08:00","datePublished":"2018-11-20T00:00:00+08:00","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-11-20-blog-git/"},"description":"A blog, portfolio, and resume.","url":"https://darrentu8.github.io/blog/2018-11-20-blog-git/","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -103,7 +103,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-07-11T00:35:07+08:00',
+    INDEX_KEY: 'index--2021-07-11T15:07:07+08:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -289,10 +289,10 @@ Left here for reference, feel free to delete.
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-10">
+            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-11">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2021-07-10T17:21:40+08:00">2021-07-10</time>
+              <time datetime="2021-07-11T15:03:35+08:00">2021-07-11</time>
             </span>
           
         
@@ -333,7 +333,12 @@ Left here for reference, feel free to delete.
   </header>
 
   
-    <blockquote>
+    <ol id="markdown-toc">
+  <li><a href="#方法一-取消與remote連接重新連接後並設定識別資料" id="markdown-toc-方法一-取消與remote連接重新連接後並設定識別資料">方法一： 取消與remote連接，重新連接後，並設定識別資料</a></li>
+  <li><a href="#方法二-更換與遠短連接方式重新請求設定-username-與-password" id="markdown-toc-方法二-更換與遠短連接方式重新請求設定-username-與-password">方法二： 更換與遠短連接方式，重新請求設定 username 與 password</a></li>
+</ol>
+
+<blockquote>
   <p>之前因為自己公司筆電跟自家桌機常常需要切換開發，導致我自己的個人部落格在不同電腦上要進行同步，或是在接手專案要維護的時候，準備要 git pull 卻出現錯誤。去google網路看是不是SSH的問題，但查了又不是此類的問題，如果你也剛好遇到此問題可以來試試以下這段：</p>
 </blockquote>
 
@@ -564,7 +569,7 @@ Git – GitHub 出現 http://jsnwork.kiiuo.com/</p>
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>初學者入門學習的演算法 - 合併排序法 Merge Sort</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>初學者入門學習的演算法 - 泡沫排序 Bubble Sort</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-12-19-blog-submodule/" class="flip-title"><span>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub</span></a>  <time class="faded fine" datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-12-19-blog-submodule/" class="flip-title"><span>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub</span></a>  <time class="faded fine" datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time></li>            </ul></aside>
 
   
 

@@ -27,8 +27,8 @@
 <meta property="og:title" content="web工程師應該要知道瀏覽器架構演變及渲染機制" />
 <meta name="author" content="Darren Tu" />
 <meta property="og:locale" content="zh_TW" />
-<meta name="description" content="「在未來，瀏覽器會變得越來越強，以後我們可以在瀏覽器做越來越多事。」" />
-<meta property="og:description" content="「在未來，瀏覽器會變得越來越強，以後我們可以在瀏覽器做越來越多事。」" />
+<meta name="description" content="A blog, portfolio, and resume." />
+<meta property="og:description" content="A blog, portfolio, and resume." />
 <link rel="canonical" href="https://darrentu8.github.io/blog/2018-10-10-blog-browser/" />
 <meta property="og:url" content="https://darrentu8.github.io/blog/2018-10-10-blog-browser/" />
 <meta property="og:site_name" content="Darren" />
@@ -39,7 +39,7 @@
 <meta property="twitter:image" content="https://img.technews.tw/wp-content/uploads/2017/12/29164436/browsers-1265309_1280.png" />
 <meta property="twitter:title" content="web工程師應該要知道瀏覽器架構演變及渲染機制" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-10-10-blog-browser/"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"description":"「在未來，瀏覽器會變得越來越強，以後我們可以在瀏覽器做越來越多事。」","image":"https://img.technews.tw/wp-content/uploads/2017/12/29164436/browsers-1265309_1280.png","url":"https://darrentu8.github.io/blog/2018-10-10-blog-browser/","headline":"web工程師應該要知道瀏覽器架構演變及渲染機制","dateModified":"2021-07-10T13:20:55+08:00","datePublished":"2018-10-10T00:00:00+08:00","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
+{"image":"https://img.technews.tw/wp-content/uploads/2017/12/29164436/browsers-1265309_1280.png","headline":"web工程師應該要知道瀏覽器架構演變及渲染機制","dateModified":"2021-07-11T15:03:39+08:00","datePublished":"2018-10-10T00:00:00+08:00","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-10-10-blog-browser/"},"description":"A blog, portfolio, and resume.","url":"https://darrentu8.github.io/blog/2018-10-10-blog-browser/","author":{"@type":"Person","name":"Darren Tu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -103,7 +103,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-07-11T00:35:07+08:00',
+    INDEX_KEY: 'index--2021-07-11T15:07:07+08:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -289,10 +289,10 @@ Left here for reference, feel free to delete.
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-10">
+            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-11">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2021-07-10T13:20:55+08:00">2021-07-10</time>
+              <time datetime="2021-07-11T15:03:39+08:00">2021-07-11</time>
             </span>
           
         
@@ -333,7 +333,39 @@ Left here for reference, feel free to delete.
   </header>
 
   
-    <blockquote>
+    <ol id="markdown-toc">
+  <li><a href="#舊石器時代single-process-瀏覽器時期" id="markdown-toc-舊石器時代single-process-瀏覽器時期">舊石器時代：Single Process 瀏覽器時期</a></li>
+  <li><a href="#安全性問題" id="markdown-toc-安全性問題">安全性問題</a></li>
+  <li><a href="#新石器時代multi-processes-瀏覽器時期" id="markdown-toc-新石器時代multi-processes-瀏覽器時期">新石器時代：Multi Processes 瀏覽器時期</a>    <ol>
+      <li><a href="#接著來看看改成這樣的架構後是否有效地解決了-single-process-瀏覽器的三大問題" id="markdown-toc-接著來看看改成這樣的架構後是否有效地解決了-single-process-瀏覽器的三大問題">接著來看看改成這樣的架構後，是否有效地解決了 Single Process 瀏覽器的三大問題：<br /></a></li>
+    </ol>
+  </li>
+  <li><a href="#現代更加豐富的-multi-processes-瀏覽器架構" id="markdown-toc-現代更加豐富的-multi-processes-瀏覽器架構">現代：更加豐富的 Multi Processes 瀏覽器架構</a></li>
+  <li><a href="#現今瀏覽器渲染引擎的運作機制" id="markdown-toc-現今瀏覽器渲染引擎的運作機制">現今瀏覽器渲染引擎的運作機制</a>    <ol>
+      <li><a href="#會出現類似作業系統工作管理員的介面" id="markdown-toc-會出現類似作業系統工作管理員的介面">會出現類似作業系統工作管理員的介面</a></li>
+    </ol>
+  </li>
+  <li><a href="#渲染流程" id="markdown-toc-渲染流程">渲染流程</a>    <ol>
+      <li><a href="#layer-分層" id="markdown-toc-layer-分層">Layer 分層</a></li>
+    </ol>
+  </li>
+  <li><a href="#compositing" id="markdown-toc-compositing">Compositing</a></li>
+  <li><a href="#reflow--repaint--compositing" id="markdown-toc-reflow--repaint--compositing">Reflow &amp; Repaint &amp; Compositing</a>    <ol>
+      <li><a href="#reflow-回流" id="markdown-toc-reflow-回流">Reflow 回流</a></li>
+      <li><a href="#repaint-重繪" id="markdown-toc-repaint-重繪">Repaint 重繪</a></li>
+      <li><a href="#composition-合成" id="markdown-toc-composition-合成">Composition 合成</a></li>
+      <li><a href="#1-改變一些-layout-相關屬性" id="markdown-toc-1-改變一些-layout-相關屬性">1. 改變一些 Layout 相關屬性<br /></a></li>
+      <li><a href="#2-只改變一些paint-only的屬性" id="markdown-toc-2-只改變一些paint-only的屬性">2. 只改變一些「paint only」的屬性<br /></a></li>
+      <li><a href="#3-compositing-only" id="markdown-toc-3-compositing-only">3. Compositing Only</a></li>
+    </ol>
+  </li>
+  <li><a href="#結語" id="markdown-toc-結語">結語</a>    <ol>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ol>
+  </li>
+</ol>
+
+<blockquote>
   <p>「在未來，瀏覽器會變得越來越強，以後我們可以在瀏覽器做越來越多事。」</p>
 </blockquote>
 
@@ -713,7 +745,7 @@ DOM Performance<br /></p>
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>初學者入門學習的演算法 - 合併排序法 Merge Sort</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>初學者入門學習的演算法 - 泡沫排序 Bubble Sort</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-12-19-blog-submodule/" class="flip-title"><span>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub</span></a>  <time class="faded fine" datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-12-19-blog-submodule/" class="flip-title"><span>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub</span></a>  <time class="faded fine" datetime="2018-12-19T00:00:00+08:00">19 Dec 2018</time></li>            </ul></aside>
 
   
 
