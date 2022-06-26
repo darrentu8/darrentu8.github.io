@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
 
-
+Powered by Hydejack v9.1.6 <https://hydejack.com/>
+-->
 
 
 
@@ -21,16 +31,16 @@
 
   
     
-<!-- Begin Jekyll SEO tag v2.7.1 -->
+<!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub | Darren</title>
-<meta name="generator" content="Jekyll v4.2.0" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub" />
 <meta name="author" content="Darren Tu" />
 <meta property="og:locale" content="zh_TW" />
-<meta name="description" content="A blog, portfolio, and resume." />
-<meta property="og:description" content="A blog, portfolio, and resume." />
-<link rel="canonical" href="https://darrentu8.github.io/blog/2018-12-19-blog-submodule/" />
-<meta property="og:url" content="https://darrentu8.github.io/blog/2018-12-19-blog-submodule/" />
+<meta name="description" content="何謂 Git Submodule 先在 GitHub 建立好 子Repository，然後在主專案輸入指令 建議不先預留資料夾否則會無法建立 子Repository Clone 完成 如果你有多個子專案，請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起更新或取回。 Reference 主要會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！ 何謂 Git Submodule 簡單的來講，就是巢狀的 Git 結構，意思是主專案中又有一個子專案需要拆開來使用git，類似一種 Library 套件管理的概念，像是大家在開發新專案的時候，如果想要用到其他專案的程式碼時，像是主流的 CSS Framwork 如：Vuetify、Bootstrap、Element UI，這些大型套件都放在 Github 方便進行維護更新，從前的作法就是先 git clone 下來，把要的檔案分別複製到自己專案，但是這樣麻煩的問題就來了！ 若不是用 npm 或 webpack 這種套件管理，假如官方有釋出新版本，那要如何更新呢？這時可別再下載zip手動更新了，這時候 Git Submodule 就是一個不錯的解決方案，幫助大家方便管理程式碼！ 先在 GitHub 建立好 子Repository，然後在主專案輸入指令 正常來說當你有一個 Repository，裡面如果包有一個子 Repository的話。是不能用 Git Push 推送到 remote repository裡的，這可能會發生問題，因此這邊就要加入 Git Submodule 的指令操作。 讓我們首先在遠端建立好欲添加的子Repository。並複製http或SSH連結，在主專案裡輸入git submodule add來開起追蹤命令，在此示範建立子專案”subCase”： 建議不先預留資料夾否則會無法建立 $ git submodule add {子專案的repo.git} {選填：主專案中欲儲存的子資料夾之資料夾名稱} Cloning into &#39;subCase&#39;... remote: Counting objects: 11, done. remote: Compressing objects: 100% (10/10), done. remote: Total 11 (delta 0), reused 11 (delta 0) Unpacking objects: 100% (11/11), done. Checking connectivity... done. 在默認地情況下，子專案會將子項目添加到與Repository同名的目錄中，在本例中為“subCase”。所以如果你希望它建立在其他資料夾，你可以在命令的末尾添加想要的資料夾名稱。 子Repository Clone 完成 Reactivating local git directory for submodule &#39;subCase&#39;. warning: LF will be replaced by CRLF in .gitmodules. The file will have its original line endings in your working directory 如果你此時運行git status，你會注意到一些事情。 $ git status On branch master Your branch is up-to-date with &#39;origin/master&#39;. Changes to be committed: (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage) new file: .gitmodules new file: subCase 然後在主專案的.git資料夾裡，可以注意到新.gitmodules文件的配置文件，為用於存儲項目 URL 和你將其拉入的本地子目錄之間的映射： [submodule &quot;subCase&quot;] path = subCase url = https://github.com/test/subCase 如果你有多個子專案，請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起更新或取回。 Reference https://git-scm.com/docs/git-submodule" />
+<meta property="og:description" content="何謂 Git Submodule 先在 GitHub 建立好 子Repository，然後在主專案輸入指令 建議不先預留資料夾否則會無法建立 子Repository Clone 完成 如果你有多個子專案，請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起更新或取回。 Reference 主要會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！ 何謂 Git Submodule 簡單的來講，就是巢狀的 Git 結構，意思是主專案中又有一個子專案需要拆開來使用git，類似一種 Library 套件管理的概念，像是大家在開發新專案的時候，如果想要用到其他專案的程式碼時，像是主流的 CSS Framwork 如：Vuetify、Bootstrap、Element UI，這些大型套件都放在 Github 方便進行維護更新，從前的作法就是先 git clone 下來，把要的檔案分別複製到自己專案，但是這樣麻煩的問題就來了！ 若不是用 npm 或 webpack 這種套件管理，假如官方有釋出新版本，那要如何更新呢？這時可別再下載zip手動更新了，這時候 Git Submodule 就是一個不錯的解決方案，幫助大家方便管理程式碼！ 先在 GitHub 建立好 子Repository，然後在主專案輸入指令 正常來說當你有一個 Repository，裡面如果包有一個子 Repository的話。是不能用 Git Push 推送到 remote repository裡的，這可能會發生問題，因此這邊就要加入 Git Submodule 的指令操作。 讓我們首先在遠端建立好欲添加的子Repository。並複製http或SSH連結，在主專案裡輸入git submodule add來開起追蹤命令，在此示範建立子專案”subCase”： 建議不先預留資料夾否則會無法建立 $ git submodule add {子專案的repo.git} {選填：主專案中欲儲存的子資料夾之資料夾名稱} Cloning into &#39;subCase&#39;... remote: Counting objects: 11, done. remote: Compressing objects: 100% (10/10), done. remote: Total 11 (delta 0), reused 11 (delta 0) Unpacking objects: 100% (11/11), done. Checking connectivity... done. 在默認地情況下，子專案會將子項目添加到與Repository同名的目錄中，在本例中為“subCase”。所以如果你希望它建立在其他資料夾，你可以在命令的末尾添加想要的資料夾名稱。 子Repository Clone 完成 Reactivating local git directory for submodule &#39;subCase&#39;. warning: LF will be replaced by CRLF in .gitmodules. The file will have its original line endings in your working directory 如果你此時運行git status，你會注意到一些事情。 $ git status On branch master Your branch is up-to-date with &#39;origin/master&#39;. Changes to be committed: (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage) new file: .gitmodules new file: subCase 然後在主專案的.git資料夾裡，可以注意到新.gitmodules文件的配置文件，為用於存儲項目 URL 和你將其拉入的本地子目錄之間的映射： [submodule &quot;subCase&quot;] path = subCase url = https://github.com/test/subCase 如果你有多個子專案，請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起更新或取回。 Reference https://git-scm.com/docs/git-submodule" />
+<link rel="canonical" href="http://localhost:4000/blog/2018-12-19-blog-submodule/" />
+<meta property="og:url" content="http://localhost:4000/blog/2018-12-19-blog-submodule/" />
 <meta property="og:site_name" content="Darren" />
 <meta property="og:image" content="https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png" />
 <meta property="og:type" content="article" />
@@ -39,13 +49,18 @@
 <meta property="twitter:image" content="https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png" />
 <meta property="twitter:title" content="Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub" />
 <script type="application/ld+json">
-{"dateModified":"2021-07-11T15:03:32+08:00","datePublished":"2018-12-19T00:00:00+08:00","author":{"@type":"Person","name":"Darren Tu"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://darrentu8.github.io/blog/2018-12-19-blog-submodule/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://darrentu8.github.io/assets/img/logo.png"},"name":"Darren Tu"},"description":"A blog, portfolio, and resume.","url":"https://darrentu8.github.io/blog/2018-12-19-blog-submodule/","image":"https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png","headline":"Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Darren Tu"},"dateModified":"2021-07-11T15:12:26+08:00","datePublished":"2018-12-19T00:00:00+08:00","description":"何謂 Git Submodule 先在 GitHub 建立好 子Repository，然後在主專案輸入指令 建議不先預留資料夾否則會無法建立 子Repository Clone 完成 如果你有多個子專案，請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起更新或取回。 Reference 主要會使用到 Git Submodule 是因為部落格是使用 GitHub Pages，是GitHub提供的一個網頁代管服務，其中 Jekyll 軟體可以用於將文檔轉換成靜態網頁，該軟體提供了將網頁上傳到GitHub Pages的功能可說是超級方便！ 何謂 Git Submodule 簡單的來講，就是巢狀的 Git 結構，意思是主專案中又有一個子專案需要拆開來使用git，類似一種 Library 套件管理的概念，像是大家在開發新專案的時候，如果想要用到其他專案的程式碼時，像是主流的 CSS Framwork 如：Vuetify、Bootstrap、Element UI，這些大型套件都放在 Github 方便進行維護更新，從前的作法就是先 git clone 下來，把要的檔案分別複製到自己專案，但是這樣麻煩的問題就來了！ 若不是用 npm 或 webpack 這種套件管理，假如官方有釋出新版本，那要如何更新呢？這時可別再下載zip手動更新了，這時候 Git Submodule 就是一個不錯的解決方案，幫助大家方便管理程式碼！ 先在 GitHub 建立好 子Repository，然後在主專案輸入指令 正常來說當你有一個 Repository，裡面如果包有一個子 Repository的話。是不能用 Git Push 推送到 remote repository裡的，這可能會發生問題，因此這邊就要加入 Git Submodule 的指令操作。 讓我們首先在遠端建立好欲添加的子Repository。並複製http或SSH連結，在主專案裡輸入git submodule add來開起追蹤命令，在此示範建立子專案”subCase”： 建議不先預留資料夾否則會無法建立 $ git submodule add {子專案的repo.git} {選填：主專案中欲儲存的子資料夾之資料夾名稱} Cloning into &#39;subCase&#39;... remote: Counting objects: 11, done. remote: Compressing objects: 100% (10/10), done. remote: Total 11 (delta 0), reused 11 (delta 0) Unpacking objects: 100% (11/11), done. Checking connectivity... done. 在默認地情況下，子專案會將子項目添加到與Repository同名的目錄中，在本例中為“subCase”。所以如果你希望它建立在其他資料夾，你可以在命令的末尾添加想要的資料夾名稱。 子Repository Clone 完成 Reactivating local git directory for submodule &#39;subCase&#39;. warning: LF will be replaced by CRLF in .gitmodules. The file will have its original line endings in your working directory 如果你此時運行git status，你會注意到一些事情。 $ git status On branch master Your branch is up-to-date with &#39;origin/master&#39;. Changes to be committed: (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage) new file: .gitmodules new file: subCase 然後在主專案的.git資料夾裡，可以注意到新.gitmodules文件的配置文件，為用於存儲項目 URL 和你將其拉入的本地子目錄之間的映射： [submodule &quot;subCase&quot;] path = subCase url = https://github.com/test/subCase 如果你有多個子專案，請務必注意，此文件與你的其他文件（例如你的.gitignore文件）一起受版本控制。它與項目的其餘部分一起更新或取回。 Reference https://git-scm.com/docs/git-submodule","headline":"Git - 如何在現有的專案中建立子repository模塊， submodule 使用教學 - GitHub","image":"https://miro.medium.com/max/2000/1*TnGnN4mSbfcvVczYYh2m7g.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2018-12-19-blog-submodule/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"Darren Tu"},"url":"http://localhost:4000/blog/2018-12-19-blog-submodule/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
 
   
+
+
+
+  <meta name="theme-color" content="#ccc">
+
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -59,16 +74,12 @@
 
 <meta name="application-name" content="Darren">
 
-
-  <meta name="theme-color" content="#ccc">
-
-
-<meta name="generator" content="Hydejack v9.1.4" />
+<meta name="generator" content="Hydejack v9.1.6" />
 
 
-<link rel="alternate" href="https://darrentu8.github.io/blog/2018-12-19-blog-submodule/" hreflang="zh-tw">
+<link rel="alternate" href="http://localhost:4000/blog/2018-12-19-blog-submodule/" hreflang="zh-tw">
 
-<link type="application/atom+xml" rel="alternate" href="https://darrentu8.github.io/feed.xml" title="Darren" />
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Darren" />
 
 
 <link rel="shortcut icon"    href="/assets/icons/favicon.ico">
@@ -81,15 +92,13 @@
 
 
 <link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
-<link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
 
 
 
 
 
 
-
-<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script");n.src=e,t&&a(n,"load",t,{once:!0});t=c.scripts[0];return t.parentNode.insertBefore(n,t),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
 !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
 !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
 !function(w) {
@@ -103,7 +112,7 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2021-07-11T22:55:06+08:00',
+    INDEX_KEY: 'index--2022-06-26T23:48:31+08:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -119,7 +128,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/css/hydejack-9.1.4.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
 <link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
 
@@ -241,19 +250,19 @@ Left here for reference, feel free to delete.
     <li><a href="/">home</a></li>
     
       <li>
-      
-        <span>/</span>
         
+          <span>/</span>
+          
+          
+          <a href="/blog/">blog</a>
         
-        <a href="/blog/">blog</a>
-      
       </li>
     
       <li>
-      
-        <span>/</span>
-        <span>2018-12-19-blog-submodule</span>
-      
+        
+          <span>/</span>
+          <span>2018-12-19-blog-submodule</span>
+        
       </li>
     
   
@@ -289,10 +298,10 @@ Left here for reference, feel free to delete.
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 2021-07-11">
+            <span class="ellipsis" data-tippy-content="Last modified at: 11 Jul 2021">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2021-07-11T15:03:32+08:00">2021-07-11</time>
+              <time datetime="2021-07-11T15:12:26+08:00">2021-07-11</time>
             </span>
           
         
@@ -409,16 +418,8 @@ Changes to be committed:
 </article>
 
 
-<!--  -->
-<section id="clapper" class="mb6">
-    <applause-button style="margin: 0 auto;width: 120px; height: 120px" color="rgb(17, 128, 127)"></applause-button>
-</section>
-  
-  
-    <p class="message centered border-radius" >
-      <span style="display:block;margin-bottom:.5rem;">喜歡就給個鼓勵！ <br> A clap is much appreciated if you enjoyed. No sign up or cost associated :)</span>
-    </p>
-  
+
+  <hr class="dingbat related mb6" />
 
 
 
@@ -567,7 +568,7 @@ Changes to be committed:
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2018-11-20-blog-git/" class="flip-title"><span>Git – repository 遠端操作出現 「Please make sure you have the correct access rights...SSH或權限錯誤 - GitHub</span></a>  <time class="faded fine" datetime="2018-11-20T00:00:00+08:00">20 Nov 2018</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2022-03-05-blog/" class="flip-title"><span>jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</span></a>  <time class="faded fine" datetime="2022-03-05T00:00:00+08:00">05 Mar 2022</time></li>                        <li class="h4">  <a href="/blog/2021-11-27-blog-git-remote-copy/" class="flip-title"><span>Git – git push 同時推送到多個遠端儲存庫</span></a>  <time class="faded fine" datetime="2021-11-27T00:00:00+08:00">27 Nov 2021</time></li>                        <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort-copy/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>            </ul></aside>
 
   
 
@@ -587,8 +588,8 @@ Changes to be committed:
     <p><small class="copyright">© 2021. All rights reserved.
 </small></p>
   
-  <!-- 
-    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.4</span></small></p> -->
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.6</span></small></p>
   <hr class="sr-only"/>
 </footer>
 
@@ -779,9 +780,8 @@ Changes to be committed:
   <!--[if gt IE 10]><!---->
   <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
 </script>
-  <script src="/assets/js/hydejack-9.1.4.js" type="module"></script>
-  <script src="/assets/js/LEGACY-hydejack-9.1.4.js" nomodule defer></script>
-  <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
   
 
   
@@ -859,26 +859,6 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 <div hidden>
   
   <h2 class="sr-only">Templates (for web app):</h2>
-
-  <clap-config>
-    <clap-text at="1">Keep going!</clap-text>
-    <clap-text at="2">Keep going ×2!</clap-text>
-    <clap-text at="3">Give me more!</clap-text>
-    <clap-text at="5">Thank you, thank you</clap-text>
-    <clap-text at="7">Far too kind!</clap-text>
-    <clap-text at="10">Never gonna give me up?</clap-text>
-    <clap-text at="14">Never gonna let me down?</clap-text>
-    <clap-text at="20">Turn around and desert me!</clap-text>
-    <clap-text at="30">You're an addict!</clap-text>
-    <clap-text at="40">Son of a clapper!</clap-text>
-    <clap-text at="50">No way</clap-text>
-    <clap-text at="60">Go back to work!</clap-text>
-    <clap-text at="70">This is getting out of <em>hand</em></clap-text>
-    <clap-text at="80">Unbelievable</clap-text>
-    <clap-text at="90">PREPOSTEROUS</clap-text>
-    <clap-text at="100">I N S A N I T Y</clap-text>
-    <clap-text at="185"><span style="font-family:monospace">FEED ME A STRAY CAT</span></clap-text>
-  </clap-config>
 
   <template id="_animation-template">
   <div class="animation-main fixed-top">

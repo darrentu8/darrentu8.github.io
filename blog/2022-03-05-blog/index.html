@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.1.6 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+  <meta name="robots" content="noindex">
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll | Darren</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll" />
+<meta name="author" content="Darren Tu" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="description" content="因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題… 目前 iMac 的作業環境為 Monterey ios 12.4： 首先需要先安裝套件管理工具： 再來安裝 Rbenv 安裝基於 ARM 的 Ruby 3.0.0 將 ruby​​ 和 gems 路徑添加到您的 shell 配置中 安裝 Jekyll 如果您使用的是 zsh 如果您使用的是 bash 更新套件(非必要) 檢查安裝 如果您還沒有進行本地安裝 如果您沒有blog，請使用 終於可以運行啦！！ Reference 因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題… 目前 iMac 的作業環境為 Monterey ios 12.4： 首先需要先安裝套件管理工具： 我使用 Homebrew 在我的 Mac 上安裝第三方軟件包。可以通過簡單的方式安裝： /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot; 再來安裝 Rbenv 我們需要安裝一個兼容 ARM 處理器的 Ruby 版本。 brew install rbenv ruby-build 安裝基於 ARM 的 Ruby 3.0.0 rbenv install 3.0.0 rbenv global 3.0.0 ruby -v rbenv rehash 將 ruby​​ 和 gems 路徑添加到您的 shell 配置中 現在，將 rbenv 添加到 bash 以便每次打開終端時加載它 如果您使用的是 zsh echo &#39;eval &quot;$(rbenv init - zsh)&quot;&#39; &gt;&gt; ~/.zshrc 如果您使用的是 bash echo &#39;eval &quot;$(rbenv init - bash)&quot;&#39; &gt;&gt; ~/.bash_profile 如果您不確定您使用的是哪個 shell，您可以使用以下命令進行檢查： echo $SHELL 安裝 Jekyll 最後，我們可以繼續安裝 Jekyll 和 Bundler。我們將進行本地安裝（不需要sudo特權）。 gem install --user-install bundler jekyll 如果您使用的是 zsh 替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0. echo &#39;export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc 如果您使用的是 bash 替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0. echo &#39;export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;&#39; &gt;&gt; ~/.bash_profile 更新套件(非必要) 對於 M1 Mac，我們可能需要做一些額外的步驟——更新 bundler、添加 webrick 並重建所有內容。 bundle update --bundler bundle add webrick bundle install --redownload 檢查安裝 現在，我們可以運行我們的示例blog。導航到您的blog，然後運行以下命令： 如果您還沒有進行本地安裝 gem install bundler jekyll 如果您沒有blog，請使用 jekyll new my-awesome-site cd my-awesome-site 終於可以運行啦！！ 接下來應該就大功告成了，開始寫blog吧～ bundle exec jekyll serve Reference https://talk.jekyllrb.com/t/jekyll-crashing-on-m1-mac/6367/16" />
+<meta property="og:description" content="因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題… 目前 iMac 的作業環境為 Monterey ios 12.4： 首先需要先安裝套件管理工具： 再來安裝 Rbenv 安裝基於 ARM 的 Ruby 3.0.0 將 ruby​​ 和 gems 路徑添加到您的 shell 配置中 安裝 Jekyll 如果您使用的是 zsh 如果您使用的是 bash 更新套件(非必要) 檢查安裝 如果您還沒有進行本地安裝 如果您沒有blog，請使用 終於可以運行啦！！ Reference 因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題… 目前 iMac 的作業環境為 Monterey ios 12.4： 首先需要先安裝套件管理工具： 我使用 Homebrew 在我的 Mac 上安裝第三方軟件包。可以通過簡單的方式安裝： /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot; 再來安裝 Rbenv 我們需要安裝一個兼容 ARM 處理器的 Ruby 版本。 brew install rbenv ruby-build 安裝基於 ARM 的 Ruby 3.0.0 rbenv install 3.0.0 rbenv global 3.0.0 ruby -v rbenv rehash 將 ruby​​ 和 gems 路徑添加到您的 shell 配置中 現在，將 rbenv 添加到 bash 以便每次打開終端時加載它 如果您使用的是 zsh echo &#39;eval &quot;$(rbenv init - zsh)&quot;&#39; &gt;&gt; ~/.zshrc 如果您使用的是 bash echo &#39;eval &quot;$(rbenv init - bash)&quot;&#39; &gt;&gt; ~/.bash_profile 如果您不確定您使用的是哪個 shell，您可以使用以下命令進行檢查： echo $SHELL 安裝 Jekyll 最後，我們可以繼續安裝 Jekyll 和 Bundler。我們將進行本地安裝（不需要sudo特權）。 gem install --user-install bundler jekyll 如果您使用的是 zsh 替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0. echo &#39;export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc 如果您使用的是 bash 替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0. echo &#39;export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;&#39; &gt;&gt; ~/.bash_profile 更新套件(非必要) 對於 M1 Mac，我們可能需要做一些額外的步驟——更新 bundler、添加 webrick 並重建所有內容。 bundle update --bundler bundle add webrick bundle install --redownload 檢查安裝 現在，我們可以運行我們的示例blog。導航到您的blog，然後運行以下命令： 如果您還沒有進行本地安裝 gem install bundler jekyll 如果您沒有blog，請使用 jekyll new my-awesome-site cd my-awesome-site 終於可以運行啦！！ 接下來應該就大功告成了，開始寫blog吧～ bundle exec jekyll serve Reference https://talk.jekyllrb.com/t/jekyll-crashing-on-m1-mac/6367/16" />
+<link rel="canonical" href="http://localhost:4000/blog/2022-03-05-blog/" />
+<meta property="og:url" content="http://localhost:4000/blog/2022-03-05-blog/" />
+<meta property="og:site_name" content="Darren" />
+<meta property="og:image" content="https://alexmanrique.com/blog/images/jekyll_m1.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-05T00:00:00+08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://alexmanrique.com/blog/images/jekyll_m1.jpg" />
+<meta property="twitter:title" content="jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Darren Tu"},"dateModified":"2022-06-26T23:48:31+08:00","datePublished":"2022-03-05T00:00:00+08:00","description":"因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題… 目前 iMac 的作業環境為 Monterey ios 12.4： 首先需要先安裝套件管理工具： 再來安裝 Rbenv 安裝基於 ARM 的 Ruby 3.0.0 將 ruby​​ 和 gems 路徑添加到您的 shell 配置中 安裝 Jekyll 如果您使用的是 zsh 如果您使用的是 bash 更新套件(非必要) 檢查安裝 如果您還沒有進行本地安裝 如果您沒有blog，請使用 終於可以運行啦！！ Reference 因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題… 目前 iMac 的作業環境為 Monterey ios 12.4： 首先需要先安裝套件管理工具： 我使用 Homebrew 在我的 Mac 上安裝第三方軟件包。可以通過簡單的方式安裝： /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot; 再來安裝 Rbenv 我們需要安裝一個兼容 ARM 處理器的 Ruby 版本。 brew install rbenv ruby-build 安裝基於 ARM 的 Ruby 3.0.0 rbenv install 3.0.0 rbenv global 3.0.0 ruby -v rbenv rehash 將 ruby​​ 和 gems 路徑添加到您的 shell 配置中 現在，將 rbenv 添加到 bash 以便每次打開終端時加載它 如果您使用的是 zsh echo &#39;eval &quot;$(rbenv init - zsh)&quot;&#39; &gt;&gt; ~/.zshrc 如果您使用的是 bash echo &#39;eval &quot;$(rbenv init - bash)&quot;&#39; &gt;&gt; ~/.bash_profile 如果您不確定您使用的是哪個 shell，您可以使用以下命令進行檢查： echo $SHELL 安裝 Jekyll 最後，我們可以繼續安裝 Jekyll 和 Bundler。我們將進行本地安裝（不需要sudo特權）。 gem install --user-install bundler jekyll 如果您使用的是 zsh 替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0. echo &#39;export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc 如果您使用的是 bash 替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0. echo &#39;export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;&#39; &gt;&gt; ~/.bash_profile 更新套件(非必要) 對於 M1 Mac，我們可能需要做一些額外的步驟——更新 bundler、添加 webrick 並重建所有內容。 bundle update --bundler bundle add webrick bundle install --redownload 檢查安裝 現在，我們可以運行我們的示例blog。導航到您的blog，然後運行以下命令： 如果您還沒有進行本地安裝 gem install bundler jekyll 如果您沒有blog，請使用 jekyll new my-awesome-site cd my-awesome-site 終於可以運行啦！！ 接下來應該就大功告成了，開始寫blog吧～ bundle exec jekyll serve Reference https://talk.jekyllrb.com/t/jekyll-crashing-on-m1-mac/6367/16","headline":"jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll","image":"https://alexmanrique.com/blog/images/jekyll_m1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2022-03-05-blog/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"Darren Tu"},"url":"http://localhost:4000/blog/2022-03-05-blog/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+
+
+
+  <meta name="theme-color" content="#ccc">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Darren">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Darren">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/blog/2022-03-05-blog/" hreflang="zh-tw">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Darren" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+
+
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2022-06-26T23:48:31+08:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: #ccc;--accent-color-faded: rgba(204,204,204,0.5);--accent-color-highlight: rgba(204,204,204,0.1);--accent-color-darkened: #b9b9b9;--theme-color: #ccc}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+<!--
+Code used for embedding Gumroad on the Hydejack Site. 
+Left here for reference, feel free to delete.
+-->
+<link rel="dns-prefetch" href="https://assets.gumroad.com">
+<script>window.GET_CLAPS_API = 'https://worker.getclaps.dev'</script>
+<script type="module">
+  const ppiData = window._ppiData = fetch('https://hydejack-ppi.qwtel.workers.dev', { mode: 'cors'}).then(res => res.json()).catch(() => ({}));
+  const promisify = f => x => new Promise(r => f(x).addEventListener('load', r));
+  const loadJS = promisify(window.loadJS);
+  {
+    let p;
+    document.querySelector('hy-push-state').addEventListener('load', () => {
+      const io = new IntersectionObserver(async (entries) => {
+        if (entries.some(x => x.isIntersecting)) {
+          p = p || loadJS('https://gumroad.com/js/gumroad-embed.js');
+          const [{ code }] = await Promise.all([ppiData, p]);
+          document.querySelectorAll('.gumroad-product-embed').forEach(el => { 
+            if (!el.dataset.gumroadParams) {
+              el.dataset.gumroadParams = 'offer_code=' + (code || 'qr0tw8m');
+            }
+          });
+          if (!window.GumroadEmbed) {
+            await new Promise(function check1(res) {
+              if ('createGumroadEmbed' in window) res(window.createGumroadEmbed());
+              else setTimeout(() => check1(res), 200);
+            });
+          }
+          await new Promise(function check2(res) {
+            if ('GumroadEmbed' in window) res(GumroadEmbed.reload());
+            else setTimeout(() => check2(res), 200);
+          });
+        }
+      }, { rootMargin: '1440px' });
+      document.querySelectorAll('.gumroad-product-embed').forEach(el => io.observe(el));
+    });
+  }
+  {
+    let p;
+    document.querySelector('hy-push-state').addEventListener('load', () => {
+      const io = new IntersectionObserver(async (entries) => {
+        if (entries.some(x => x.isIntersecting)) {
+          p = p || loadJS('https://gumroad.com/js/gumroad.js');
+          const [{ code }] = await Promise.all([ppiData, p]);
+          if (code) {
+            document.querySelectorAll('.gumroad-button').forEach(el => { 
+              if (!el.href.endsWith(code)) {
+                el.href = el.href + '/' + (code || 'qr0tw8m');
+              }
+            });
+          }
+          if (!window.GumroadOverlay) {
+            await new Promise(function check(res) {
+              if ('createGumroadOverlay' in window) res(window.createGumroadOverlay());
+              else setTimeout(() => check(res), 200);
+            });
+          }
+        }
+      }, { rootMargin: '300px' });
+      document.querySelectorAll('.gumroad-button').forEach(el => io.observe(el));
+    });
+  }
+</script>
+
+
+</head>
+
+<body class="no-break-layout">
+  
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/blog/">blog</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>2022-03-05-blog</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-blog-blog-" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2022-03-05T00:00:00+08:00">05 Mar 2022</time> in <span>Blog</span> 
+      </span>
+      
+        
+          
+          
+          
+            
+            
+            <span class="ellipsis" data-tippy-content="Last modified at: 26 Jun 2022">
+              <span class="sr-only">Last modified at:</span>
+              <span class="icon-history"></span>
+              <time datetime="2022-06-26T23:48:31+08:00">2022-06-26</time>
+            </span>
+          
+        
+      
+    </div>
+
+    
+    
+      
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="https://alexmanrique.com/blog/images/jekyll_m1.jpg"
+  
+  alt="jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      
+      
+    
+
+    
+
+
+
+  
+
+
+  </header>
+
+  
+    <ol id="markdown-toc">
+  <li><a href="#因為剛好最近買了一台-m1-imac剛好需要重新安裝-jekyll-寫blog因為無法順利安裝的坑真心覺得-m1-架構上處理環境真的不是那麼簡單如果你也剛好遇到此篇可以讓你解決m1-mac-安裝-jekyll的問題" id="markdown-toc-因為剛好最近買了一台-m1-imac剛好需要重新安裝-jekyll-寫blog因為無法順利安裝的坑真心覺得-m1-架構上處理環境真的不是那麼簡單如果你也剛好遇到此篇可以讓你解決m1-mac-安裝-jekyll的問題">因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題…</a>    <ol>
+      <li><a href="#目前-imac-的作業環境為-monterey-ios-124" id="markdown-toc-目前-imac-的作業環境為-monterey-ios-124">目前 iMac 的作業環境為 Monterey ios 12.4：</a>        <ol>
+          <li><a href="#首先需要先安裝套件管理工具" id="markdown-toc-首先需要先安裝套件管理工具">首先需要先安裝套件管理工具：</a></li>
+          <li><a href="#再來安裝-rbenv" id="markdown-toc-再來安裝-rbenv">再來安裝 Rbenv</a></li>
+          <li><a href="#安裝基於-arm-的-ruby-300" id="markdown-toc-安裝基於-arm-的-ruby-300">安裝基於 ARM 的 Ruby 3.0.0</a></li>
+          <li><a href="#將-ruby-和-gems-路徑添加到您的-shell-配置中" id="markdown-toc-將-ruby-和-gems-路徑添加到您的-shell-配置中">將 ruby​​ 和 gems 路徑添加到您的 shell 配置中</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#安裝-jekyll" id="markdown-toc-安裝-jekyll">安裝 Jekyll</a>    <ol>
+      <li><a href="#如果您使用的是-zsh" id="markdown-toc-如果您使用的是-zsh">如果您使用的是 zsh</a></li>
+      <li><a href="#如果您使用的是-bash" id="markdown-toc-如果您使用的是-bash">如果您使用的是 bash</a></li>
+      <li><a href="#更新套件非必要" id="markdown-toc-更新套件非必要">更新套件(非必要)</a></li>
+      <li><a href="#檢查安裝" id="markdown-toc-檢查安裝">檢查安裝</a></li>
+      <li><a href="#如果您還沒有進行本地安裝" id="markdown-toc-如果您還沒有進行本地安裝">如果您還沒有進行本地安裝</a></li>
+      <li><a href="#如果您沒有blog請使用" id="markdown-toc-如果您沒有blog請使用">如果您沒有blog，請使用</a></li>
+    </ol>
+  </li>
+  <li><a href="#終於可以運行啦" id="markdown-toc-終於可以運行啦">終於可以運行啦！！</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ol>
+
+<h2 id="因為剛好最近買了一台-m1-imac剛好需要重新安裝-jekyll-寫blog因為無法順利安裝的坑真心覺得-m1-架構上處理環境真的不是那麼簡單如果你也剛好遇到此篇可以讓你解決m1-mac-安裝-jekyll的問題">因為剛好最近買了一台 M1 imac，剛好需要重新安裝 Jekyll 寫BLOG，因為無法順利安裝的坑，真心覺得 M1 架構上處理環境真的不是那麼簡單。如果你也剛好遇到，此篇可以讓你解決M1 Mac 安裝 Jekyll的問題…</h2>
+
+<h3 id="目前-imac-的作業環境為-monterey-ios-124">目前 iMac 的作業環境為 Monterey ios 12.4：</h3>
+
+<h4 id="首先需要先安裝套件管理工具">首先需要先安裝套件管理工具：</h4>
+<p>我使用 Homebrew 在我的 Mac 上安裝第三方軟件包。可以通過簡單的方式安裝：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre></div></div>
+
+<h4 id="再來安裝-rbenv">再來安裝 Rbenv</h4>
+<p>我們需要安裝一個兼容 ARM 處理器的 Ruby 版本。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install rbenv ruby-build
+</code></pre></div></div>
+
+<h4 id="安裝基於-arm-的-ruby-300">安裝基於 ARM 的 Ruby 3.0.0</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv install 3.0.0
+rbenv global 3.0.0
+ruby -v
+rbenv rehash
+</code></pre></div></div>
+
+<h4 id="將-ruby-和-gems-路徑添加到您的-shell-配置中">將 ruby​​ 和 gems 路徑添加到您的 shell 配置中</h4>
+<p>現在，將 rbenv 添加到 bash 以便每次打開終端時加載它</p>
+
+<p>如果您使用的是 zsh</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'eval "$(rbenv init - zsh)"' &gt;&gt; ~/.zshrc
+</code></pre></div></div>
+
+<p>如果您使用的是 bash</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'eval "$(rbenv init - bash)"' &gt;&gt; ~/.bash_profile
+</code></pre></div></div>
+
+<p>如果您不確定您使用的是哪個 shell，您可以使用以下命令進行檢查：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $SHELL
+</code></pre></div></div>
+
+<h2 id="安裝-jekyll">安裝 Jekyll</h2>
+<p>最後，我們可以繼續安裝 Jekyll 和 Bundler。我們將進行本地安裝（不需要sudo特權）。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install --user-install bundler jekyll
+</code></pre></div></div>
+
+<h4 id="如果您使用的是-zsh">如果您使用的是 zsh</h4>
+<p>替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' &gt;&gt; ~/.zshrc
+</code></pre></div></div>
+
+<h4 id="如果您使用的是-bash">如果您使用的是 bash</h4>
+<p>替換3.0.0為您的 ruby​​ 版本。您可以通過 . 檢查您的 ruby​​ 版本ruby -v。如果您的 ruby​​ 版本是 2.7，則使用2.7.0.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' &gt;&gt; ~/.bash_profile
+</code></pre></div></div>
+
+<h4 id="更新套件非必要">更新套件(非必要)</h4>
+<p>對於 M1 Mac，我們可能需要做一些額外的步驟——更新 bundler、添加 webrick 並重建所有內容。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle update --bundler
+bundle add webrick
+bundle install --redownload
+</code></pre></div></div>
+
+<h4 id="檢查安裝">檢查安裝</h4>
+<p>現在，我們可以運行我們的示例blog。導航到您的blog，然後運行以下命令：</p>
+
+<h4 id="如果您還沒有進行本地安裝">如果您還沒有進行本地安裝</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler jekyll 
+</code></pre></div></div>
+
+<h4 id="如果您沒有blog請使用">如果您沒有blog，請使用</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new my-awesome-site
+cd my-awesome-site
+</code></pre></div></div>
+
+<h2 id="終於可以運行啦">終於可以運行啦！！</h2>
+<p>接下來應該就大功告成了，開始寫blog吧～</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+<p>https://talk.jekyllrb.com/t/jekyll-crashing-on-m1-mac/6367/16</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="/assets/img/avatar.jpg"
+    srcset="/assets/img/avatar.jpg 1x,/assets/img/avatar.jpg 2x"
+    
+  
+  alt="Darren Tu"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About Author
+  </h2>
+
+  <ol>
+  <li>9年的網站開發經驗，擅長產品開發、UIUX介面。</li>
+  <li>電子商務、媒體健康類網頁APP開發。</li>
+  <li>與產品團隊、設計團隊密切合作良好溝通協調能力。</li>
+  <li>熟練 MVC / MVVM Pattern 前後分離架構。</li>
+  <li>Sass / SCSS 模組化，npm/webpack 等構建工具，Git 協同開發流程。</li>
+  <li>分析客戶數據，市場信息和競爭製定營銷策略。</li>
+</ol>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://gitlab.com/darrentu88" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:darrentu8@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.instagram.com/tu_d/" title="Instagram" class="no-mark-external">
+      <span class="icon-instagram"></span>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/blog/2021-11-27-blog-git-remote-copy/" class="flip-title"><span>Git – git push 同時推送到多個遠端儲存庫</span></a>  <time class="faded fine" datetime="2021-11-27T00:00:00+08:00">27 Nov 2021</time></li>                        <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort-copy/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>                        <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>            </ul></aside>
+
+  
+
+  
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2021. All rights reserved.
+</small></p>
+  
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.6</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg " style="background:url('https://www.pbs.org/wgbh/nova/media/images/bfcppfu.width-800.png') center/cover"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="Darren" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Darren</h2></a>
+    
+    
+      <p class="">
+        A blog, portfolio, and resume.
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_drawer--opened"
+          href="/blog/"
+          class="sidebar-nav-item "
+          
+        >
+          Blog
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/showcase/"
+          class="sidebar-nav-item "
+          
+        >
+          Showcase
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/about/"
+          class="sidebar-nav-item "
+          
+        >
+          About Me
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/resume/"
+          class="sidebar-nav-item "
+          
+        >
+          Resume
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://gitlab.com/darrentu88" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:darrentu8@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.instagram.com/tu_d/" title="Instagram" class="no-mark-external">
+      <span class="icon-instagram"></span>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+
+<!--<![endif]-->
+  <!-- <script>
+  document.querySelector('hy-push-state').setAttribute('prefetch', '');
+
+  document.querySelectorAll('.sidebar a[href^="/"]').forEach(function (el) { 
+    el.addEventListener('click', function (e) {
+      if (el.pathname === window.location.pathname) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelector('hy-drawer').close();
+      }
+    });
+  });
+</script> -->
+
+<!--
+Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+-->
+<script>
+  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
+    function e(e){
+      (console.error?console.error:console.log).call(console,e)
+    }
+
+    function t(e){
+      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
+    }
+
+    function r(e,t){
+      var r=e.substr(t,2);return parseInt(r,16)
+    }
+
+    function n(e,n){
+      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
+        var l=r(e,a)^c;
+        o+=String.fromCharCode(l)
+      }
+      return t(o)
+    }
+
+    var o="/cdn-cgi/l/email-protection#",
+        c=".__cf_email__",
+        a="data-cfemail",
+        l=document.createElement("div");
+
+    !function(){
+      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
+        try{
+          var c=t[r],a=c.href.indexOf(o);
+          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
+        }catch(t){
+          e(t)
+        }
+    }(),
+    function(){
+      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
+        try{
+          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
+          o.parentNode.replaceChild(i,o)
+        }catch(t){
+          e(t)
+        }
+    }()
+  });
+</script>
+
+
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+</div>
+
+
+</body>
+</html>
