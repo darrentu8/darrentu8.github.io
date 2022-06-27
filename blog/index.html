@@ -1,17 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh"><!--
- __  __                __                                     __
-/\ \/\ \              /\ \             __                    /\ \
-\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
- \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
-  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
-   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
-    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
-                /\___/                \ \____/
-                \/__/                  \/___/
-
-Powered by Hydejack v9.1.6 <https://hydejack.com/>
--->
+<html lang="zh">
 
 
 
@@ -88,6 +76,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 
 <link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
 
+<link rel="dns-prefetch" href="/assets/js/search-worker-9.1.6.js" as="worker" id="_hrefSearch">
 
 
 
@@ -104,10 +93,11 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._noNavbar = false;
   w._noToc = false;
   w._noSearch = false;
+  w._advertise = false;
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2022-06-26T23:48:31+08:00',
+    INDEX_KEY: 'index--2022-06-28T01:08:23+08:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -131,7 +121,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 
   <style id="_pageStyle">
 
-html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57)}
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57);--dark-mode-body-bg: #282f31;--dark-mode-border-color: #343c3f}
 
 </style>
 
@@ -139,69 +129,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 <!--<![endif]-->
 
 
-<!--
-Code used for embedding Gumroad on the Hydejack Site. 
-Left here for reference, feel free to delete.
--->
-<link rel="dns-prefetch" href="https://assets.gumroad.com">
-<script>window.GET_CLAPS_API = 'https://worker.getclaps.dev'</script>
-<script type="module">
-  const ppiData = window._ppiData = fetch('https://hydejack-ppi.qwtel.workers.dev', { mode: 'cors'}).then(res => res.json()).catch(() => ({}));
-  const promisify = f => x => new Promise(r => f(x).addEventListener('load', r));
-  const loadJS = promisify(window.loadJS);
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad-embed.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          document.querySelectorAll('.gumroad-product-embed').forEach(el => { 
-            if (!el.dataset.gumroadParams) {
-              el.dataset.gumroadParams = 'offer_code=' + (code || 'qr0tw8m');
-            }
-          });
-          if (!window.GumroadEmbed) {
-            await new Promise(function check1(res) {
-              if ('createGumroadEmbed' in window) res(window.createGumroadEmbed());
-              else setTimeout(() => check1(res), 200);
-            });
-          }
-          await new Promise(function check2(res) {
-            if ('GumroadEmbed' in window) res(GumroadEmbed.reload());
-            else setTimeout(() => check2(res), 200);
-          });
-        }
-      }, { rootMargin: '1440px' });
-      document.querySelectorAll('.gumroad-product-embed').forEach(el => io.observe(el));
-    });
-  }
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          if (code) {
-            document.querySelectorAll('.gumroad-button').forEach(el => { 
-              if (!el.href.endsWith(code)) {
-                el.href = el.href + '/' + (code || 'qr0tw8m');
-              }
-            });
-          }
-          if (!window.GumroadOverlay) {
-            await new Promise(function check(res) {
-              if ('createGumroadOverlay' in window) res(window.createGumroadOverlay());
-              else setTimeout(() => check(res), 200);
-            });
-          }
-        }
-      }, { rootMargin: '300px' });
-      document.querySelectorAll('.gumroad-button').forEach(el => io.observe(el));
-    });
-  }
-</script>
+<!-- Add HTML tags here to be included in the head -->
 
 
 </head>
@@ -287,7 +215,7 @@ Left here for reference, feel free to delete.
 
 
 <li class="h4">
-  <a href="/blog/2022-03-05-blog/" class="flip-title"><span>jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</span></a>
+  <a href="/blog/2022-03-05-blog-jekyll-M1/" class="flip-title"><span>jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</span></a>
   <time class="faded fine" datetime="2022-03-05T00:00:00+08:00">05 Mar</time>
 </li>
 
@@ -304,8 +232,37 @@ Left here for reference, feel free to delete.
 
 
 <li class="h4">
-  <a href="/blog/2021-11-27-blog-git-remote-copy/" class="flip-title"><span>Git – git push 同時推送到多個遠端儲存庫</span></a>
+  <a href="/blog/2021-11-27-blog-git-remote/" class="flip-title"><span>Git – git push 同時推送到多個遠端儲存庫</span></a>
   <time class="faded fine" datetime="2021-11-27T00:00:00+08:00">27 Nov</time>
+</li>
+
+  
+
+  
+  
+  
+
+
+<li class="h4">
+  <a href="/example/2021-02-13-whats-new-in-hydejack-9-1/" class="flip-title"><span>What’s New in Hydejack 9.1?</span></a>
+  <time class="faded fine" datetime="2021-02-13T00:00:00+08:00">13 Feb</time>
+</li>
+
+  
+
+  
+  
+    </ul>
+    <h2 id="y-2020" class="hr-bottom">2020</h2>
+    <ul class="related-posts">
+    
+  
+  
+
+
+<li class="h4">
+  <a href="/example/2020-07-03-introducing-hydejack-9/" class="flip-title"><span>Introducing Hydejack 9</span></a>
+  <time class="faded fine" datetime="2020-07-03T00:00:00+08:00">03 Jul</time>
 </li>
 
   
@@ -321,7 +278,7 @@ Left here for reference, feel free to delete.
 
 
 <li class="h4">
-  <a href="/blog/2019-01-22-blog-mergesort-copy/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>
+  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>
   <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan</time>
 </li>
 
@@ -398,6 +355,18 @@ Left here for reference, feel free to delete.
 
 
 <li class="h4">
+  <a href="/example/2018-06-01-example-content-iii/" class="flip-title"><span>Example Content III</span></a>
+  <time class="faded fine" datetime="2018-06-01T00:00:00+08:00">01 Jun</time>
+</li>
+
+  
+
+  
+  
+  
+
+
+<li class="h4">
   <a href="/blog/2018-06-01-blog-Jekyll/" class="flip-title"><span>好用的 Github Pages & jekyll 介紹</span></a>
   <time class="faded fine" datetime="2018-06-01T00:00:00+08:00">01 Jun</time>
 </li>
@@ -414,13 +383,55 @@ Left here for reference, feel free to delete.
   <time class="faded fine" datetime="2018-04-30T00:00:00+08:00">30 Apr</time>
 </li>
 
+  
+
+  
+  
+    </ul>
+    <h2 id="y-2017" class="hr-bottom">2017</h2>
+    <ul class="related-posts">
+    
+  
+  
+
+
+<li class="h4">
+  <a href="/example/2017-11-23-example-content-ii/" class="flip-title"><span>Example Content II</span></a>
+  <time class="faded fine" datetime="2017-11-23T00:00:00+08:00">23 Nov</time>
+</li>
+
+  
+
+  
+  
+    </ul>
+    <h2 id="y-2012" class="hr-bottom">2012</h2>
+    <ul class="related-posts">
+    
+  
+  
+
+
+<li class="h4">
+  <a href="/example/2012-02-07-example-content/" class="flip-title"><span>Example Content</span></a>
+  <time class="faded fine" datetime="2012-02-07T00:00:00+08:00">07 Feb</time>
+</li>
+
   </ul>
 
 
 </article>
 
+<!--  -->
+<section id="clapper" class="mb6">
+  <applause-button style="margin: 0 auto;width: 120px; height: 120px" color="rgb(17, 128, 127)"></applause-button>
+</section>
 
-  <hr class="dingbat related mb6" />
+
+  <p class="message centered border-radius" >
+    <span style="display:block;margin-bottom:.5rem;">喜歡就給個鼓勵！ <br> A clap is much appreciated if you enjoyed. No sign up or cost associated :)</span>
+  </p>
+
 
 
 
@@ -434,7 +445,7 @@ Left here for reference, feel free to delete.
 </small></p>
   
   
-    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.6</span></small></p>
+  
   <hr class="sr-only"/>
 </footer>
 
@@ -495,7 +506,7 @@ Left here for reference, feel free to delete.
       <li>
         <a
           
-          href="/showcase/"
+          href="/projects/"
           class="sidebar-nav-item "
           
         >
@@ -631,6 +642,15 @@ Left here for reference, feel free to delete.
 
   
 
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
 <!--<![endif]-->
   <!-- <script>
   document.querySelector('hy-push-state').setAttribute('prefetch', '');
@@ -743,8 +763,42 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
   </a>
 </template>
 
-</div>
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
 
+  
+  
+    <template id="_search-template">
+  <button id="_search" class="nav-btn no-hover">
+    <label class="sr-only" for="_search-input">Search</label>
+    <span class="icon-search"></span>
+  </button>
+  <div id="_search-box">
+    <div class="nav-btn">
+      <span class="icon-search"></span>
+    </div>
+    <input 
+      id="_search-input"
+      type="search"
+      class="form-control form-control-lg nav-btn"
+      placeholder="Build with JEKYLL_ENV=production to enable search."
+    />
+    <button type="reset" class="nav-btn no-hover">
+      <span class="sr-only">Close</span>
+      <span class="icon-cross"></span>
+    </button>
+  </div>
+  <div id="_hits"></div>
+</template>
+
+  
+</div>
 
 </body>
 </html>

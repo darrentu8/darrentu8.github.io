@@ -1,17 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh"><!--
- __  __                __                                     __
-/\ \/\ \              /\ \             __                    /\ \
-\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
- \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
-  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
-   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
-    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
-                /\___/                \ \____/
-                \/__/                  \/___/
-
-Powered by Hydejack v9.1.6 <https://hydejack.com/>
--->
+<html lang="zh">
 
 
 
@@ -41,6 +29,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Darren" />
 <meta property="og:type" content="website" />
+<link rel="next" href="http://localhost:4000/2/" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Blog" />
 <script type="application/ld+json">
@@ -88,6 +77,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 
 <link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
 
+<link rel="dns-prefetch" href="/assets/js/search-worker-9.1.6.js" as="worker" id="_hrefSearch">
 
 
 
@@ -104,10 +94,11 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._noNavbar = false;
   w._noToc = false;
   w._noSearch = false;
+  w._advertise = false;
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2022-06-26T23:48:31+08:00',
+    INDEX_KEY: 'index--2022-06-28T01:08:23+08:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -131,7 +122,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 
   <style id="_pageStyle">
 
-html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57)}
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-highlight: rgba(79,177,186,0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57);--dark-mode-body-bg: #282f31;--dark-mode-border-color: #343c3f}
 
 </style>
 
@@ -139,69 +130,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);
 <!--<![endif]-->
 
 
-<!--
-Code used for embedding Gumroad on the Hydejack Site. 
-Left here for reference, feel free to delete.
--->
-<link rel="dns-prefetch" href="https://assets.gumroad.com">
-<script>window.GET_CLAPS_API = 'https://worker.getclaps.dev'</script>
-<script type="module">
-  const ppiData = window._ppiData = fetch('https://hydejack-ppi.qwtel.workers.dev', { mode: 'cors'}).then(res => res.json()).catch(() => ({}));
-  const promisify = f => x => new Promise(r => f(x).addEventListener('load', r));
-  const loadJS = promisify(window.loadJS);
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad-embed.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          document.querySelectorAll('.gumroad-product-embed').forEach(el => { 
-            if (!el.dataset.gumroadParams) {
-              el.dataset.gumroadParams = 'offer_code=' + (code || 'qr0tw8m');
-            }
-          });
-          if (!window.GumroadEmbed) {
-            await new Promise(function check1(res) {
-              if ('createGumroadEmbed' in window) res(window.createGumroadEmbed());
-              else setTimeout(() => check1(res), 200);
-            });
-          }
-          await new Promise(function check2(res) {
-            if ('GumroadEmbed' in window) res(GumroadEmbed.reload());
-            else setTimeout(() => check2(res), 200);
-          });
-        }
-      }, { rootMargin: '1440px' });
-      document.querySelectorAll('.gumroad-product-embed').forEach(el => io.observe(el));
-    });
-  }
-  {
-    let p;
-    document.querySelector('hy-push-state').addEventListener('load', () => {
-      const io = new IntersectionObserver(async (entries) => {
-        if (entries.some(x => x.isIntersecting)) {
-          p = p || loadJS('https://gumroad.com/js/gumroad.js');
-          const [{ code }] = await Promise.all([ppiData, p]);
-          if (code) {
-            document.querySelectorAll('.gumroad-button').forEach(el => { 
-              if (!el.href.endsWith(code)) {
-                el.href = el.href + '/' + (code || 'qr0tw8m');
-              }
-            });
-          }
-          if (!window.GumroadOverlay) {
-            await new Promise(function check(res) {
-              if ('createGumroadOverlay' in window) res(window.createGumroadOverlay());
-              else setTimeout(() => check(res), 200);
-            });
-          }
-        }
-      }, { rootMargin: '300px' });
-      document.querySelectorAll('.gumroad-button').forEach(el => io.observe(el));
-    });
-  }
-</script>
+<!-- Add HTML tags here to be included in the head -->
 
 
 </head>
@@ -273,7 +202,7 @@ Left here for reference, feel free to delete.
       <li>
         <a
           
-          href="/showcase/"
+          href="/projects/"
           class="sidebar-nav-item "
           
         >
@@ -431,10 +360,10 @@ Left here for reference, feel free to delete.
 
 
 
-<article id="post-blog-blog-" class="page post mb6" role="article">
+<article id="post-blog-blog-jekyll-M1" class="page post mb6" role="article">
   <header>
     <h1 class="post-title flip-project-title">
-      <a href="/blog/2022-03-05-blog/" class="flip-title">
+      <a href="/blog/2022-03-05-blog-jekyll-M1/" class="flip-title">
         jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll
       </a>
     </h1>
@@ -463,7 +392,7 @@ Left here for reference, feel free to delete.
 
     
     
-      <a href="/blog/2022-03-05-blog/" class="no-hover no-print-link flip-project" tabindex="-1">
+      <a href="/blog/2022-03-05-blog-jekyll-M1/" class="no-hover no-print-link flip-project" tabindex="-1">
         <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
           
 
@@ -610,7 +539,7 @@ cd my-awesome-site
     
     <footer>
       <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/blog/2022-03-05-blog/">jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</a>
+        Continue reading <a class="heading flip-title" href="/blog/2022-03-05-blog-jekyll-M1/">jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</a>
 
       </p>
     </footer>
@@ -624,10 +553,10 @@ cd my-awesome-site
 
 
 
-<article id="post-blog-blog-git-remote copy" class="page post mb6" role="article">
+<article id="post-blog-blog-git-remote" class="page post mb6" role="article">
   <header>
     <h1 class="post-title flip-project-title">
-      <a href="/blog/2021-11-27-blog-git-remote-copy/" class="flip-title">
+      <a href="/blog/2021-11-27-blog-git-remote/" class="flip-title">
         Git – git push 同時推送到多個遠端儲存庫
       </a>
     </h1>
@@ -656,7 +585,7 @@ cd my-awesome-site
 
     
     
-      <a href="/blog/2021-11-27-blog-git-remote-copy/" class="no-hover no-print-link flip-project" tabindex="-1">
+      <a href="/blog/2021-11-27-blog-git-remote/" class="no-hover no-print-link flip-project" tabindex="-1">
         <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
           
 
@@ -737,7 +666,7 @@ demo2  https://github.com/XXX-2.git (push)
     
     <footer>
       <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/blog/2021-11-27-blog-git-remote-copy/">Git – git push 同時推送到多個遠端儲存庫</a>
+        Continue reading <a class="heading flip-title" href="/blog/2021-11-27-blog-git-remote/">Git – git push 同時推送到多個遠端儲存庫</a>
 
       </p>
     </footer>
@@ -751,10 +680,192 @@ demo2  https://github.com/XXX-2.git (push)
 
 
 
-<article id="post-blog-blog-mergesort copy" class="page post mb6" role="article">
+<article id="post-example-whats-new-in-hydejack-9-1" class="page post mb6" role="article">
   <header>
     <h1 class="post-title flip-project-title">
-      <a href="/blog/2019-01-22-blog-mergesort-copy/" class="flip-title">
+      <a href="/example/2021-02-13-whats-new-in-hydejack-9-1/" class="flip-title">
+        What’s New in Hydejack 9.1?
+      </a>
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2021-02-13T00:00:00+08:00">13 Feb 2021</time> in <a href="/example/" class="flip-title">Example</a> 
+      </span>
+      
+        
+          
+          
+          
+            
+            
+            <span class="ellipsis" data-tippy-content="Last modified at: 07 Feb 2022">
+              <span class="sr-only">Last modified at:</span>
+              <span class="icon-history"></span>
+              <time datetime="2022-02-07T13:25:03+08:00">2022-02-07</time>
+            </span>
+          
+        
+      
+    </div>
+
+    
+    
+      <a href="/example/2021-02-13-whats-new-in-hydejack-9-1/" class="no-hover no-print-link flip-project" tabindex="-1">
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/blog/jj-ying.jpg"
+  
+  alt="What’s New in Hydejack 9.1?"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      </a>
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      Version 9.1 provides minor design changes, new features, and closes multiple issues.
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <p>What’s New in Hydejack 9.1?</p>
+
+
+    
+    
+    <footer>
+      <p class="read-more">
+        Continue reading <a class="heading flip-title" href="/example/2021-02-13-whats-new-in-hydejack-9-1/">What’s New in Hydejack 9.1?</a>
+
+      </p>
+    </footer>
+  
+</article>
+
+
+  
+
+
+
+
+
+<article id="post-example-introducing-hydejack-9" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      <a href="/example/2020-07-03-introducing-hydejack-9/" class="flip-title">
+        Introducing Hydejack 9
+      </a>
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2020-07-03T00:00:00+08:00">03 Jul 2020</time> in <a href="/example/" class="flip-title">Example</a> 
+      </span>
+      
+        
+          
+          
+          
+            
+            
+            <span class="ellipsis" data-tippy-content="Last modified at: 07 Feb 2022">
+              <span class="sr-only">Last modified at:</span>
+              <span class="icon-history"></span>
+              <time datetime="2022-02-07T13:25:03+08:00">2022-02-07</time>
+            </span>
+          
+        
+      
+    </div>
+
+    
+    
+      <a href="/example/2020-07-03-introducing-hydejack-9/" class="no-hover no-print-link flip-project" tabindex="-1">
+        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
+          
+
+
+<img
+  
+    src="/assets/img/blog/jeremy-bishop@0,5x.jpg"
+    
+    
+  
+  alt="Introducing Hydejack 9"
+  
+  
+  width="864"
+  height="486"
+  loading="lazy"
+/>
+
+        </div>
+      </a>
+      
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      Version 9 is the most complete version of Hydejack yet. Modernized design, big headlines, and big new features.
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <p class="lead">Version 9 is the most complete version of Hydejack yet.</p>
+
+
+    
+    
+    <footer>
+      <p class="read-more">
+        Continue reading <a class="heading flip-title" href="/example/2020-07-03-introducing-hydejack-9/">Introducing Hydejack 9</a>
+
+      </p>
+    </footer>
+  
+</article>
+
+
+  
+
+
+
+
+
+<article id="post-blog-blog-mergesort" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title">
         JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法
       </a>
     </h1>
@@ -771,10 +882,10 @@ demo2  https://github.com/XXX-2.git (push)
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 26 Jun 2022">
+            <span class="ellipsis" data-tippy-content="Last modified at: 11 Jul 2021">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2022-06-26T15:10:48+08:00">2022-06-26</time>
+              <time datetime="2021-07-11T15:12:26+08:00">2021-07-11</time>
             </span>
           
         
@@ -783,7 +894,7 @@ demo2  https://github.com/XXX-2.git (push)
 
     
     
-      <a href="/blog/2019-01-22-blog-mergesort-copy/" class="no-hover no-print-link flip-project" tabindex="-1">
+      <a href="/blog/2019-01-22-blog-mergesort/" class="no-hover no-print-link flip-project" tabindex="-1">
         <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
           
 
@@ -884,7 +995,7 @@ console.log(mergeSort(array));
     
     <footer>
       <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/blog/2019-01-22-blog-mergesort-copy/">JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</a>
+        Continue reading <a class="heading flip-title" href="/blog/2019-01-22-blog-mergesort/">JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</a>
 
       </p>
     </footer>
@@ -1855,263 +1966,6 @@ const handleSubmit = values =&gt; {
 </article>
 
 
-  
-
-
-
-
-
-<article id="post-blog-blog-Jekyll" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/blog/2018-06-01-blog-Jekyll/" class="flip-title">
-        好用的 Github Pages & jekyll 介紹
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2018-06-01T00:00:00+08:00">01 Jun 2018</time> in <span>Blog</span> 
-      </span>
-      
-        
-          
-          
-          
-            
-            
-            <span class="ellipsis" data-tippy-content="Last modified at: 11 Jul 2021">
-              <span class="sr-only">Last modified at:</span>
-              <span class="icon-history"></span>
-              <time datetime="2021-07-11T15:12:26+08:00">2021-07-11</time>
-            </span>
-          
-        
-      
-    </div>
-
-    
-    
-      <a href="/blog/2018-06-01-blog-Jekyll/" class="no-hover no-print-link flip-project" tabindex="-1">
-        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
-          
-
-
-<img
-  
-    src="https://frank198978104.github.io/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image0.jpg"
-  
-  alt="好用的 Github Pages & jekyll 介紹"
-  
-  
-  width="864"
-  height="486"
-  loading="lazy"
-/>
-
-        </div>
-      </a>
-      
-    
-
-    
-
-
-
-  
-
-
-  </header>
-
-  
-    <ol id="markdown-toc">
-  <li><a href="#什麼是-jekyll-" id="markdown-toc-什麼是-jekyll-">什麼是 Jekyll ?</a>    <ol>
-      <li><a href="#打算使用-jekyll-的朋友們會建議熟悉-git--html--markdown" id="markdown-toc-打算使用-jekyll-的朋友們會建議熟悉-git--html--markdown">打算使用 Jekyll 的朋友們，會建議熟悉 Git &amp; Html &amp; Markdown</a></li>
-    </ol>
-  </li>
-  <li><a href="#使用的-jekyll-特色呢" id="markdown-toc-使用的-jekyll-特色呢">使用的 Jekyll 特色呢?</a></li>
-  <li><a href="#github-pages--jekyll-技術介紹" id="markdown-toc-github-pages--jekyll-技術介紹">Github Pages &amp; jekyll 技術介紹</a></li>
-  <li><a href="#強大特色" id="markdown-toc-強大特色">強大特色</a></li>
-  <li><a href="#jekyll-官方介紹" id="markdown-toc-jekyll-官方介紹">Jekyll 官方介紹</a></li>
-  <li><a href="#jekyll-theme" id="markdown-toc-jekyll-theme">jekyll-theme</a></li>
-  <li><a href="#github-page" id="markdown-toc-github-page">Github Page</a></li>
-</ol>
-
-<p class="note">來說說 Github Pages 與 jekyll 好用的部落格功能吧~</p>
-
-<h2 id="什麼是-jekyll-">什麼是 Jekyll ?</h2>
-<p>Jekyll是基於Ruby Gem的解析引擎，能夠將樣板、liquid 語言、markdown轉換為 靜態網頁 的產生器。</p>
-
-<h4 id="打算使用-jekyll-的朋友們會建議熟悉-git--html--markdown">打算使用 Jekyll 的朋友們，會建議熟悉 Git &amp; Html &amp; Markdown</h4>
-
-<h2 id="使用的-jekyll-特色呢">使用的 Jekyll 特色呢?</h2>
-<ul>
-  <li>No more databases 不需要資料庫</li>
-  <li>Liquid Template 動態模板</li>
-  <li>Free hosting with GitHub Pages 只要學會git push 就可以丟到github page上</li>
-  <li>Markdown 好編寫</li>
-</ul>
-
-<h2 id="github-pages--jekyll-技術介紹">Github Pages &amp; jekyll 技術介紹</h2>
-<p>Git, Github, Github Pages
-Git版本控制工具，Github是使用git版本控制項目的的虛擬主機服務<br />
-<img src="https://photo.minwt.com/img/Content/server/github-page/github-page_00.jpg" alt="" /> 
-<br />
-連結在此：http://pages.github.com/
-<br />
-Github Pages 是 Github 提供的服務，可以利用 Repository 建立自己的靜態頁面，其中不需要任何 databases 的 Jekyll 強大功能，在每次的 git push 後會將 markdown 轉換為頁面，所以 Jekyll 是很適合用來建立部落格等內容！</p>
-
-<h2 id="強大特色">強大特色</h2>
-
-<ul>
-  <li>快速 html靜態頁就是快速。</li>
-  <li>穩定 ”github” 這個品牌能不信嗎?</li>
-  <li>完全免費，可惜大部分的模板不怎麼美就是了…</li>
-  <li>容量無限 只要會git commit、git push。</li>
-  <li>Markdown是一種輕量級標記式語言，他在編寫完後就像是一般的文字檔，也可轉換成有效的XHTML（或者HTML）文件。</li>
-  <li>其易懂易讀的語法都是用標點符號組成，方便作為網站blog的寫作語言。附上相關範例 http://markdown.tw/</li>
-</ul>
-
-<h2 id="jekyll-官方介紹">Jekyll 官方介紹</h2>
-<p>可於官網下來或在 git hub 搜尋相關主題下載下來使用，其資料夾編寫後會產生(如：_site等資料夾)，再將此資料夾的靜態網頁上傳於 Repository 即可。
-https://jekyllrb.com/</p>
-
-<h2 id="jekyll-theme">jekyll-theme</h2>
-<p>Jekyll所使用的樣板語言是使用 Ruby 編寫，透過渲染器運行生成為靜態網站。本地端需要下載 ruby 來運行。以下官方提供模板範例可下載使用。
-https://www.ruby-lang.org/zh_tw/
-https://github.com/topics/jekyll-theme</p>
-
-<h2 id="github-page">Github Page</h2>
-<p>在發布Repository後，之後每次都只需要在本地端push文章就可以了！而每次push到github上的文章及Template，都會透過Jekyll server轉換為靜態的網站。
-<img src="/assets/img/blog/Jekyll.jpg" alt="" /></p>
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/blog/2018-06-01-blog-Jekyll/">好用的 Github Pages & jekyll 介紹</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
-  
-
-
-
-
-
-<article id="post-blog-frontend-backend-blog-F2E" class="page post mb6" role="article">
-  <header>
-    <h1 class="post-title flip-project-title">
-      <a href="/blog/frontend/backend/2018-04-30-blog-F2E/" class="flip-title">
-        Frontend ? Backend ? 如何選擇？
-      </a>
-    </h1>
-
-    <div class="post-date">
-      
-      <span class="ellipsis mr1">
-        <time datetime="2018-04-30T00:00:00+08:00">30 Apr 2018</time> in <span>Blog</span> / <span>Frontend</span> / <span>Backend</span> on <span>Frontend</span>, <span>Backend</span>
-      </span>
-      
-        
-          
-          
-          
-            
-            
-            <span class="ellipsis" data-tippy-content="Last modified at: 11 Jul 2021">
-              <span class="sr-only">Last modified at:</span>
-              <span class="icon-history"></span>
-              <time datetime="2021-07-11T22:55:36+08:00">2021-07-11</time>
-            </span>
-          
-        
-      
-    </div>
-
-    
-    
-      <a href="/blog/frontend/backend/2018-04-30-blog-F2E/" class="no-hover no-print-link flip-project" tabindex="-1">
-        <div class="img-wrapper lead aspect-ratio sixteen-nine flip-project-img">
-          
-
-
-<img
-  
-    src="https://magiccopy.xyz/assets/images/hadder.gif"
-  
-  alt="Frontend ? Backend ? 如何選擇？"
-  
-  
-  width="864"
-  height="486"
-  loading="lazy"
-/>
-
-        </div>
-      </a>
-      
-    
-
-    
-
-
-
-  
-
-
-  </header>
-
-  
-    <ol id="markdown-toc">
-  <li><a href="#一開始的志向-全端工程師" id="markdown-toc-一開始的志向-全端工程師">一開始的志向： 全端工程師</a></li>
-  <li><a href="#自我困惑時期" id="markdown-toc-自我困惑時期">自我困惑時期</a></li>
-  <li><a href="#frontend-很簡單嗎" id="markdown-toc-frontend-很簡單嗎">Frontend 很簡單嗎？</a></li>
-  <li><a href="#fullstack-的疑慮" id="markdown-toc-fullstack-的疑慮">FullStack 的疑慮</a></li>
-</ol>
-
-<blockquote>
-  <p>最近剛好面臨換工作，要思考未來發展的方向，目前還是以 web 開發為目標，而提及 web 開發，不外乎就是前端與後端之間做選擇。一開始進入程式開發的世界是從前端入手，除了入門容易以外，能夠透過畫面看到成果也加強學習的慾望跟成就感。大約在學習前端一年後開始接觸後端，原因是為了更了解網頁的運作流程，讓自己的作品更完整。</p>
-</blockquote>
-
-<h2 id="一開始的志向-全端工程師">一開始的志向： 全端工程師</h2>
-<p>在前後端開發都有興趣的狀況下，一開始的目標理所當然設為 FullStack Developer，直到看到巴哈姆特一篇很火的文章當中的一句話：<br />
-通常自稱 FullStack Developer 的人都很廢<br />
-我開始去對 web 生態系做了更深入的了解，除了讓我領悟到在初期我應該專注在一端發展外，也讓我進入一個自我困惑期。<br /></p>
-<h2 id="自我困惑時期">自我困惑時期</h2>
-<p>不查還好，一查才發現原來網路上有很多看不起前端開發者的言論，原因不出以下幾項：<br />
-入門容易，門檻較低
-比起後端較不需要本科知識
-大量轉職人潮，供需法則，而有了前端難民的說法
-這讓我對自己的未來走向產生疑惑，繼續前端的路我真的可以創造價值嗎？
-釐清 “自己” 的價值
-經過長時間的思考，我對於以上的困惑都有了大致上的解答</p>
-<h2 id="frontend-很簡單嗎">Frontend 很簡單嗎？</h2>
-<p>我想有深入了解前端領域的人都知道這個答案是否定的，近期的前端技術可說是經過了大進化，PWA、React-Native、WebAssembly 等技術漸漸成熟，瀏覽器的發展也加深前端的發展性，效能優化也變成重要的工作， website 漸漸式微，由 webapp 取而代之。
-很幸運的我在實習遇到很好的主管，很堅強的前端團隊，讓我知道品質好的程式碼是怎麼一回事，好的專案架構又是怎麼一回事，而這些絕對都是不簡單的事。與主管聊過後也更確定 ”價值是自己創造的“ 這個道理。我想就 frontend developer 而言，有的人更偏向工程這塊，有的人更偏向使用者體驗、UI 畫面，並不會因為他的職稱是工程師，就讓偏向使用者體驗與UI 畫面的人顯得沒有價值，這方面得依照 “需求” 去做決定，而我們則是可以掌握自己要走進哪種需求中的人。</p>
-<h2 id="fullstack-的疑慮">FullStack 的疑慮</h2>
-<p>我得承認，在有限的時間裡，要同時專精前端與後端是非常困難的，因此我最終也同意得先專精於某一端，對哪端比較有掌握度或比較有興趣就好好往那端發展，然而這並不代表我不能同時學另外的技術啊！我想如果有人問我是在寫什麼的，我會回答，我是一個 web developer 或是我是一個 software engineer，平常專注於前端技術，但也對後端技術有所涉獵。身為一個前端，你會想知道怎麼自己寫資料層，而身為一個後端，你也會好奇自己產生的資料能夠在前端呈現出怎麼樣的效果，我想這是理所當然的事。
-也許未來我會掛著 frontend 的 title 在軟體界闖蕩，又或許在幾年後 title 變成了 backend，但我想這些都不是最重要的事，重要的是我不能忘記我想透過軟體解決問題的初衷，也不能忘記自己想成為分享者的夢想，其中最重要的是我不能忘記我是因為熱愛這個領域才在其中闖蕩，我想總有一天我會創造自己的價值的。</p>
-
-
-    
-    
-    <footer>
-      <p class="read-more">
-        Continue reading <a class="heading flip-title" href="/blog/frontend/backend/2018-04-30-blog-F2E/">Frontend ? Backend ? 如何選擇？</a>
-
-      </p>
-    </footer>
-  
-</article>
-
-
 
 
   <h2 class="sr-only">Pagination</h2>
@@ -2121,7 +1975,12 @@ https://github.com/topics/jekyll-theme</p>
       
       
       
-  <span class=" ">Older</span>
+  <a
+    class=" "
+    href="/2/"
+    rel="next"
+    
+  >Older</a>
 
 
     </li>
@@ -2146,7 +2005,7 @@ https://github.com/topics/jekyll-theme</p>
 </small></p>
   
   
-    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.1.6</span></small></p>
+  
   <hr class="sr-only"/>
 </footer>
 
@@ -2166,6 +2025,15 @@ https://github.com/topics/jekyll-theme</p>
 
   
 
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      /**/
+      navigator.serviceWorker.getRegistration()
+        .then(r => r.unregister())
+        .catch(() => {});
+      /**/
+    }
+  </script>
 <!--<![endif]-->
   <!-- <script>
   document.querySelector('hy-push-state').setAttribute('prefetch', '');
@@ -2278,8 +2146,42 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
   </a>
 </template>
 
-</div>
+  
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
 
+  
+  
+    <template id="_search-template">
+  <button id="_search" class="nav-btn no-hover">
+    <label class="sr-only" for="_search-input">Search</label>
+    <span class="icon-search"></span>
+  </button>
+  <div id="_search-box">
+    <div class="nav-btn">
+      <span class="icon-search"></span>
+    </div>
+    <input 
+      id="_search-input"
+      type="search"
+      class="form-control form-control-lg nav-btn"
+      placeholder="Build with JEKYLL_ENV=production to enable search."
+    />
+    <button type="reset" class="nav-btn no-hover">
+      <span class="sr-only">Close</span>
+      <span class="icon-cross"></span>
+    </button>
+  </div>
+  <div id="_hits"></div>
+</template>
+
+  
+</div>
 
 </body>
 </html>
