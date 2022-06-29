@@ -37,7 +37,7 @@
 <meta property="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/c/c5/Merge_sort_animation2.gif" />
 <meta property="twitter:title" content="JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Darren Tu"},"dateModified":"2021-07-11T15:12:26+08:00","datePublished":"2019-01-22T00:00:00+08:00","description":"初學者入門學習的演算法 - 合併排序法 Merge Sort 理解歸併排序背後的邏輯 Reference 初學者入門學習的演算法 - 合併排序法 Merge Sort 排序是指按特定順序（數字或字母順序）排列列表中的項目。排序通常與搜索一起使用。 如果在視覺上和算法上對列表進行了排序，那麼在給定列表中搜索元素（稱為key值）通常會更容易。 有很多方法（算法）可以對給定的元素列表進行排序。歸併排序是一種更流行、更有效的方法。 理解歸併排序背後的邏輯 合併排序使用分而治之的概念對給定的元素列表進行排序。它將問題分解為更小的子問題，直到它們變得簡單到可以直接解決。 以下是歸併排序的步驟： 將給定的列表分成兩半（對於具有奇數個元素的列表，大致相等的一半）。 繼續以相同的方式劃分子數組，直到只剩下單個元素數組。 從單元素數組開始，合併子數組，以便對每個合併的子數組進行排序。 重複第 3 步，最終得到一個排序數組。 function merge(left, right) { let arr = [] // Break out of loop if any one of the array gets empty while (left.length &amp;&amp; right.length) { // Pick the smaller among the smallest element of left and right sub arrays if (left[0] &lt; right[0]) { arr.push(left.shift()) } else { arr.push(right.shift()) } } // Concatenating the leftover elements // (in case we didn&#39;t go through the entire left or right array) return [ ...arr, ...left, ...right ] } function mergeSort(array) { const half = array.length / 2 // Base case or terminating case if(array.length &lt; 2){ return array } const left = array.splice(0, half) return merge(mergeSort(left),mergeSort(array)) } array = [4, 8, 7, 2, 11, 1, 3]; console.log(mergeSort(array)); [1, 2, 3, 4, 7, 8, 11] Reference https://stackabuse.com/merge-sort-in-javascript","headline":"JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法","image":"https://upload.wikimedia.org/wikipedia/commons/c/c5/Merge_sort_animation2.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019-01-22-blog-mergesort/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"Darren Tu"},"url":"http://localhost:4000/blog/2019-01-22-blog-mergesort/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Darren Tu"},"dateModified":"2022-06-28T01:14:55+08:00","datePublished":"2019-01-22T00:00:00+08:00","description":"初學者入門學習的演算法 - 合併排序法 Merge Sort 理解歸併排序背後的邏輯 Reference 初學者入門學習的演算法 - 合併排序法 Merge Sort 排序是指按特定順序（數字或字母順序）排列列表中的項目。排序通常與搜索一起使用。 如果在視覺上和算法上對列表進行了排序，那麼在給定列表中搜索元素（稱為key值）通常會更容易。 有很多方法（算法）可以對給定的元素列表進行排序。歸併排序是一種更流行、更有效的方法。 理解歸併排序背後的邏輯 合併排序使用分而治之的概念對給定的元素列表進行排序。它將問題分解為更小的子問題，直到它們變得簡單到可以直接解決。 以下是歸併排序的步驟： 將給定的列表分成兩半（對於具有奇數個元素的列表，大致相等的一半）。 繼續以相同的方式劃分子數組，直到只剩下單個元素數組。 從單元素數組開始，合併子數組，以便對每個合併的子數組進行排序。 重複第 3 步，最終得到一個排序數組。 function merge(left, right) { let arr = [] // Break out of loop if any one of the array gets empty while (left.length &amp;&amp; right.length) { // Pick the smaller among the smallest element of left and right sub arrays if (left[0] &lt; right[0]) { arr.push(left.shift()) } else { arr.push(right.shift()) } } // Concatenating the leftover elements // (in case we didn&#39;t go through the entire left or right array) return [ ...arr, ...left, ...right ] } function mergeSort(array) { const half = array.length / 2 // Base case or terminating case if(array.length &lt; 2){ return array } const left = array.splice(0, half) return merge(mergeSort(left),mergeSort(array)) } array = [4, 8, 7, 2, 11, 1, 3]; console.log(mergeSort(array)); [1, 2, 3, 4, 7, 8, 11] Reference https://stackabuse.com/merge-sort-in-javascript","headline":"JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法","image":"https://upload.wikimedia.org/wikipedia/commons/c/c5/Merge_sort_animation2.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019-01-22-blog-mergesort/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"Darren Tu"},"url":"http://localhost:4000/blog/2019-01-22-blog-mergesort/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -102,9 +102,9 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2022-06-28T01:08:23+08:00',
+    INDEX_KEY: 'index--2022-06-29T10:11:06+08:00',
   };
-  w._clapButton = true;
+  w._clapButton = false;
 }(window);</script>
 
 
@@ -226,10 +226,10 @@ html{--accent-color: #ccc;--accent-color-faded: rgba(204,204,204,0.5);--accent-c
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 11 Jul 2021">
+            <span class="ellipsis" data-tippy-content="Last modified at: 28 Jun 2022">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2021-07-11T15:12:26+08:00">2021-07-11</time>
+              <time datetime="2022-06-28T01:14:55+08:00">2022-06-28</time>
             </span>
           
         
@@ -507,7 +507,7 @@ console.log(mergeSort(array));
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/example/2017-11-23-example-content-ii/" class="flip-title"><span>Example Content II</span></a>  <time class="faded fine" datetime="2017-11-23T00:00:00+08:00">23 Nov 2017</time></li>          <li class="h4">  <a href="/blog/2018-06-01-blog-Jekyll/" class="flip-title"><span>好用的 Github Pages & jekyll 介紹</span></a>  <time class="faded fine" datetime="2018-06-01T00:00:00+08:00">01 Jun 2018</time></li>          <li class="h4">  <a href="/example/2020-07-03-introducing-hydejack-9/" class="flip-title"><span>Introducing Hydejack 9</span></a>  <time class="faded fine" datetime="2020-07-03T00:00:00+08:00">03 Jul 2020</time></li>      </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/blog/2019-01-14-blog-bubble/" class="flip-title"><span>JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-14T00:00:00+08:00">14 Jan 2019</time></li>          <li class="h4">  <a href="/blog/2021-11-27-blog-git-remote/" class="flip-title"><span>Git – git push 同時推送到多個遠端儲存庫</span></a>  <time class="faded fine" datetime="2021-11-27T00:00:00+08:00">27 Nov 2021</time></li>          <li class="h4">  <a href="/blog/frontend/backend/2018-04-30-blog-F2E/" class="flip-title"><span>Frontend ? Backend ? 如何選擇？</span></a>  <time class="faded fine" datetime="2018-04-30T00:00:00+08:00">30 Apr 2018</time></li>      </ul></aside>
 
   
 

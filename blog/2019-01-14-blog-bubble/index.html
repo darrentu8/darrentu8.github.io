@@ -37,7 +37,7 @@
 <meta property="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif" />
 <meta property="twitter:title" content="JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Darren Tu"},"dateModified":"2021-07-11T15:12:26+08:00","datePublished":"2019-01-14T00:00:00+08:00","description":"初學者入門學習的演算法 - 泡沫排序 Bubble Sort 如果相鄰元素的順序錯誤，則冒泡排序算法會重複交換相鄰元素 Reference 初學者入門學習的演算法 - 泡沫排序 Bubble Sort 泡沫排序演算法的運作如下： 比較相鄰的元素。如果第一個比第二個大，就交換他們兩個。 對每一對相鄰元素作同樣的工作，從開始第一對到結尾的最後一對。這步做完後，最後的元素會是最大的數。 針對所有的元素重複以上的步驟，除了最後一個。 持續每次對越來越少的元素重複上面的步驟，直到沒有任何一對數字需要比較。 由於它的簡潔，泡沫排序通常被用來對於程式設計入門的學生介紹演算法的概念。 如果相鄰元素的順序錯誤，則冒泡排序算法會重複交換相鄰元素 冒泡排序常用於實現排序算法。氣泡中的每個元素都與其周圍的元素形成對比。以泡泡形式。該列表將通過算法進行處理。對具有 n 個元素的列表進行排序需要 N-1 遍。取一個包含 n 個元素的表 A，這些元素必須用某種氣泡排序。算法如下 • 在第 1 輪中，數字 A[0] 由 A[1] 組成，數字 A[1] 與 A[2] 進行比較，數字 A[2] 與 A[3] 進行比較，等等. 列表中最大的項放在第 1 輪的末尾，位於列表的最高索引處。 • A[0] 與第 2 輪中的 A[1] 進行比較，A[1] 與 A[2] 進行比較，依此類推。第二大項放在列表末尾的第二高索引上通過 2。 • 第 n-1 次移動將 A[0] 與 A[1]、A[1] 與 A[2] 進行比較，依此類推。傳球在底部結束。列表的第一個索引是列表中最小的項目。 var n = [282, 6, 88, 44, 33, 12, 15, 121, 351, 234, 99]; for (m = 0; m &lt; 10; m++) { for (j = 0; j &lt; 10; j++) { if (n[m] &lt; n[j]) { temp = n[m]; n[m] = n[j]; n[j] = temp; } } } hint = &quot;&lt;br&gt;&quot;; document.writeln(&quot;數列經泡沫排序後 ..&quot; + hint); for (m = 0; m &lt; 10; m++) { document.writeln(n[m]); document.writeln(hint); } Reference https://laptrinhx.com/","headline":"JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法","image":"https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019-01-14-blog-bubble/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"Darren Tu"},"url":"http://localhost:4000/blog/2019-01-14-blog-bubble/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Darren Tu"},"dateModified":"2022-06-28T01:14:55+08:00","datePublished":"2019-01-14T00:00:00+08:00","description":"初學者入門學習的演算法 - 泡沫排序 Bubble Sort 如果相鄰元素的順序錯誤，則冒泡排序算法會重複交換相鄰元素 Reference 初學者入門學習的演算法 - 泡沫排序 Bubble Sort 泡沫排序演算法的運作如下： 比較相鄰的元素。如果第一個比第二個大，就交換他們兩個。 對每一對相鄰元素作同樣的工作，從開始第一對到結尾的最後一對。這步做完後，最後的元素會是最大的數。 針對所有的元素重複以上的步驟，除了最後一個。 持續每次對越來越少的元素重複上面的步驟，直到沒有任何一對數字需要比較。 由於它的簡潔，泡沫排序通常被用來對於程式設計入門的學生介紹演算法的概念。 如果相鄰元素的順序錯誤，則冒泡排序算法會重複交換相鄰元素 冒泡排序常用於實現排序算法。氣泡中的每個元素都與其周圍的元素形成對比。以泡泡形式。該列表將通過算法進行處理。對具有 n 個元素的列表進行排序需要 N-1 遍。取一個包含 n 個元素的表 A，這些元素必須用某種氣泡排序。算法如下 • 在第 1 輪中，數字 A[0] 由 A[1] 組成，數字 A[1] 與 A[2] 進行比較，數字 A[2] 與 A[3] 進行比較，等等. 列表中最大的項放在第 1 輪的末尾，位於列表的最高索引處。 • A[0] 與第 2 輪中的 A[1] 進行比較，A[1] 與 A[2] 進行比較，依此類推。第二大項放在列表末尾的第二高索引上通過 2。 • 第 n-1 次移動將 A[0] 與 A[1]、A[1] 與 A[2] 進行比較，依此類推。傳球在底部結束。列表的第一個索引是列表中最小的項目。 var n = [282, 6, 88, 44, 33, 12, 15, 121, 351, 234, 99]; for (m = 0; m &lt; 10; m++) { for (j = 0; j &lt; 10; j++) { if (n[m] &lt; n[j]) { temp = n[m]; n[m] = n[j]; n[j] = temp; } } } hint = &quot;&lt;br&gt;&quot;; document.writeln(&quot;數列經泡沫排序後 ..&quot; + hint); for (m = 0; m &lt; 10; m++) { document.writeln(n[m]); document.writeln(hint); } Reference https://laptrinhx.com/","headline":"JS - 氣泡排序法 O(n²) Bubble Sort - 資料結構演算法","image":"https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019-01-14-blog-bubble/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"Darren Tu"},"url":"http://localhost:4000/blog/2019-01-14-blog-bubble/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -102,9 +102,9 @@
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2022-06-28T01:08:23+08:00',
+    INDEX_KEY: 'index--2022-06-29T10:11:06+08:00',
   };
-  w._clapButton = true;
+  w._clapButton = false;
 }(window);</script>
 
 
@@ -226,10 +226,10 @@ html{--accent-color: #ccc;--accent-color-faded: rgba(204,204,204,0.5);--accent-c
           
             
             
-            <span class="ellipsis" data-tippy-content="Last modified at: 11 Jul 2021">
+            <span class="ellipsis" data-tippy-content="Last modified at: 28 Jun 2022">
               <span class="sr-only">Last modified at:</span>
               <span class="icon-history"></span>
-              <time datetime="2021-07-11T15:12:26+08:00">2021-07-11</time>
+              <time datetime="2022-06-28T01:14:55+08:00">2022-06-28</time>
             </span>
           
         
@@ -490,7 +490,7 @@ for (m = 0; m &lt; 10; m++) {
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/blog/frontend/backend/2018-04-30-blog-F2E/" class="flip-title"><span>Frontend ? Backend ? 如何選擇？</span></a>  <time class="faded fine" datetime="2018-04-30T00:00:00+08:00">30 Apr 2018</time></li>          <li class="h4">  <a href="/blog/2022-03-05-blog-jekyll-M1/" class="flip-title"><span>jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</span></a>  <time class="faded fine" datetime="2022-03-05T00:00:00+08:00">05 Mar 2022</time></li>          <li class="h4">  <a href="/example/2012-02-07-example-content/" class="flip-title"><span>Example Content</span></a>  <time class="faded fine" datetime="2012-02-07T00:00:00+08:00">07 Feb 2012</time></li>      </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Random Posts</h2>  <ul class="related-posts">          <li class="h4">  <a href="/blog/2019-01-22-blog-mergesort/" class="flip-title"><span>JS - 合併排序法 O(n logn) Merge Sort - 資料結構演算法</span></a>  <time class="faded fine" datetime="2019-01-22T00:00:00+08:00">22 Jan 2019</time></li>          <li class="h4">  <a href="/blog/2022-03-05-blog-jekyll-M1/" class="flip-title"><span>jekyll – 如何在 Apple M1 Macbook 上安裝 jekyll</span></a>  <time class="faded fine" datetime="2022-03-05T00:00:00+08:00">05 Mar 2022</time></li>          <li class="h4">  <a href="/blog/2021-11-27-blog-git-remote/" class="flip-title"><span>Git – git push 同時推送到多個遠端儲存庫</span></a>  <time class="faded fine" datetime="2021-11-27T00:00:00+08:00">27 Nov 2021</time></li>      </ul></aside>
 
   
 
