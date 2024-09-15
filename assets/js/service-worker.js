@@ -29,7 +29,7 @@ const SHELL_CACHE = "shell-9.2.1--v13--sw/";
 const ASSETS_CACHE = "assets--v13--sw/";
 
 // The cache for regular content, which will be invalidated every time you make a new build.
-const CONTENT_CACHE = "content--2024-09-15T01:02:58+08:00--sw/";
+const CONTENT_CACHE = "content--2024-09-15T10:59:31+08:00--sw/";
 
 // A URL search parameter you can add to external assets to cache them in the service worker.
 const SW_CACHE_SEARCH_PARAM = "sw-cache";
@@ -139,6 +139,19 @@ const STATIC_FILES = [
   /**/"/assets/img/projects/DataEngine/DE_7.jpg",
   /**/"/assets/img/projects/DataEngine/DE_8.jpg",
   /**/"/assets/img/projects/DataEngine/DE_9.jpg",
+  /**/"/assets/img/projects/EMCC/EMCC_0.png",
+  /**/"/assets/img/projects/EMCC/EMCC_1.png",
+  /**/"/assets/img/projects/EMCC/EMCC_10.png",
+  /**/"/assets/img/projects/EMCC/EMCC_11.png",
+  /**/"/assets/img/projects/EMCC/EMCC_2.png",
+  /**/"/assets/img/projects/EMCC/EMCC_3.png",
+  /**/"/assets/img/projects/EMCC/EMCC_4-2.png",
+  /**/"/assets/img/projects/EMCC/EMCC_4.png",
+  /**/"/assets/img/projects/EMCC/EMCC_5.png",
+  /**/"/assets/img/projects/EMCC/EMCC_6.png",
+  /**/"/assets/img/projects/EMCC/EMCC_7.png",
+  /**/"/assets/img/projects/EMCC/EMCC_8.png",
+  /**/"/assets/img/projects/EMCC/EMCC_9.png",
   /**/"/assets/img/projects/IDC/IDC_1.jpg",
   /**/"/assets/img/projects/IDC/IDC_10.jpg",
   /**/"/assets/img/projects/IDC/IDC_11.jpg",
@@ -229,6 +242,7 @@ const STATIC_FILES = [
   /**/"/assets/img/projects/nike-golf/p-001.png",
   /**/"/assets/img/projects/nike-golf/p-002.png",
   /**/"/assets/img/projects/nike-golf/p-003.png",
+  /**/"/assets/img/projects/nike-golf/p-004-2.png",
   /**/"/assets/img/projects/nike-golf/p-004.png",
   /**/"/assets/img/projects/nike-golf/p-005.png",
   /**/"/assets/img/projects/nike-golf/p-006.png",
