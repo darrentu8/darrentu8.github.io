@@ -1,272 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-<url>
-  <loc>https://darrentu8.github.io/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/about/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/resume/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2024-04-27-blog-react19-2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2024-04-16-blog-react19-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2024-02-21-blog-vue3&amp;whiteboard/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2024-01-13-blog-vue3&amp;AI-2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2024-01-09-blog-vue3&amp;AI-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-04-25-blog-Monorepo&amp;Docker/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-03-16-blog-Monorepo&amp;react18-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-03-08-blog-Monorepo&amp;vue3-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-03-03-blog-react18-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-02-13-blog-vue3&amp;Quasar-2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-02-02-blog-vue3&amp;Quasar-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2023-01-09-blog-vue3&amp;Pinia/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-07-20-blog-vue3&amp;React-2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-07-02-blog-vue3&amp;React/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-06-25-blog-vue3-2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-06-08-blog-vue3-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-04-07-blog-vue2vsVue3-2/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-03-14-blog-vue2vsVue3-1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2022-03-05-blog-jekyll-M1/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2021-11-27-blog-git-remote/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2019-01-22-blog-mergesort/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2019-01-14-blog-bubble/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2018-12-19-blog-submodule/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2018-11-20-blog-git/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2018-10-10-blog-browser/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/2018-06-01-blog-Jekyll/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/blog/%E8%81%B7%E6%B6%AF%E8%A6%8F%E5%8A%83/%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC/2018-04-30-blog-F2E/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/DRE-APP/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/wb/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/Sharing&amp;Polling/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/IDC/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/APP-Prototype/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/nike-vn/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/nike-golf/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/nike-golf-system/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/DataEngine/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/Join/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/EMCC/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/Medication/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/ADATA-OFFICIAL/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/ADATA-HR-SYSTEM/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/Kingnet/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/KB/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/projects/Website/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://darrentu8.github.io/3/</loc>
-  <lastmod>2024-09-16T15:35:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://darrentu8.github.io/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/about/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/resume/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2024-04-27-blog-react19-2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2024-04-16-blog-react19-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2024-02-21-blog-vue3&amp;whiteboard/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2024-01-13-blog-vue3&amp;AI-2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2024-01-09-blog-vue3&amp;AI-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-04-25-blog-Monorepo&amp;Docker/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-03-16-blog-Monorepo&amp;react18-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-03-08-blog-Monorepo&amp;vue3-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-03-03-blog-react18-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-02-13-blog-vue3&amp;Quasar-2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-02-02-blog-vue3&amp;Quasar-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2023-01-09-blog-vue3&amp;Pinia/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-07-20-blog-vue3&amp;React-2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-07-02-blog-vue3&amp;React/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-06-25-blog-vue3-2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-06-08-blog-vue3-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-04-07-blog-vue2vsVue3-2/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-03-14-blog-vue2vsVue3-1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2022-03-05-blog-jekyll-M1/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2021-11-27-blog-git-remote/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2019-01-22-blog-mergesort/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2019-01-14-blog-bubble/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2018-12-19-blog-submodule/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2018-11-20-blog-git/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2018-10-10-blog-browser/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2018-08-05-blog-google-sheet/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/blog/2018-06-01-blog-Jekyll/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://darrentu8.github.io/blog/%E8%81%B7%E6%B6%AF%E8%A6%8F%E5%8A%83/%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC/2018-04-30-blog-F2E/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/DRE-APP/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/StudioExpress/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/wb/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/Sharing&amp;Polling/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/IDC/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/APP-Prototype/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/nike-vn/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/nike-golf/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/nike-golf-system/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/DataEngine/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/Join/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/EMCC/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/Medication/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/ADATA-OFFICIAL/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/ADATA-HR-SYSTEM/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/Kingnet/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/KB/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/projects/Website/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://darrentu8.github.io/3/</loc>
+    <lastmod>2024-10-04T12:42:10+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 
 
 </urlset>
